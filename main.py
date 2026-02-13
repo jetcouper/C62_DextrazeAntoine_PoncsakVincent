@@ -1,5 +1,6 @@
 from sys import argv
 import re
+import entrainement
 
 def main():
     chemin = argv[1]
@@ -9,8 +10,8 @@ def main():
     f = open(chemin, encoding=encodage)
     texte = f.read()
     texte = re.findall(r'\w+' , texte)
-    f.close()
 
+    f.close()
     return 0
 
 
