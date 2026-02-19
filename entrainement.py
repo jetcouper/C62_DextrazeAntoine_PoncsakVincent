@@ -15,31 +15,29 @@ class Entrainement:
         print("entrainement terminer")
     
     def creationMatrice(self, texte,fenetre):
-        list_mot_dic = {}
         list_unique = []
-        list_mot = []
         for i in texte:
             if i not in list_unique:
                 list_unique.append(i)
-              
-        for i in texte:
-            list_mot.append(i)
-        array_shape = (len(list_unique), len(list_unique))
-        list_mot_dic = {index: string for index, string in enumerate(list_unique)}
+
+
+        mot_a_index = {word: index for index, word in enumerate(list_unique)}
+        size = len(list_unique)
         # Create the 2D array of zeros with integer data type
-        zero_matrix = np.zeros(array_shape, dtype=int)
+        zero_matrix = np.zeros((size,size), dtype=int)
+        demi_fenetre = fenetre//2
 
-        # for index, string in list_mot_dic.items():
-        #     for index2, string2 in list_mot_dic.items():
-        #         if string != string2:
-        # for string in list_mot:
-        #      for string2 in list_mot:
-                 
-                 
-
-
-
-        return zero_matrix, list_mot_dic
+        for index, mot_central in enumerate(texte):
+            i = mot_a_index[mot_central]
+            debut = max(0, index - demi_fenetre)
+            fin = min(len(texte), index + demi_fenetre + 1)
+            #fenetre_mot = texte[debut:fin]
+            for indexVoisin in range(debut,fin):
+                if indexVoisin != index:
+                    voisin = texte[indexVoisin]
+                    j = mot_a_index[voisin]
+                    zero_matrix[i,j] += 1
+        return zero_matrix, mot_a_index
     
     def creationTexte(self,chemin,encodage):
         f = open(chemin, encoding=encodage)
