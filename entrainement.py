@@ -31,7 +31,6 @@ class Entrainement:
             i = mot_a_index[mot_central]
             debut = max(0, index - demi_fenetre)
             fin = min(len(texte), index + demi_fenetre + 1)
-            #fenetre_mot = texte[debut:fin]
             for indexVoisin in range(debut,fin):
                 if indexVoisin != index:
                     voisin = texte[indexVoisin]
@@ -43,6 +42,9 @@ class Entrainement:
         f = open(chemin, encoding=encodage)
         texte = f.read()
         texte = re.findall(r'\w+' , texte)
+        texte_lower = [item.lower() for item in texte]
+        
+            
 
         f.close()
-        return texte
+        return texte_lower
