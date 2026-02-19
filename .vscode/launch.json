@@ -11,7 +11,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["C:/travail/TP1_Intelligence_2/textes/DonQuichotteUTF8.txt", "utf-8"]
+            "args": ["C:/travail/C62_DextrazeAntoine_PoncsakVincent/textes/DonQuichotteUTF8.txt", "utf-8"]
         },
         {
             "name": "GerminalUTF8",
@@ -19,7 +19,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["C:/travail/TP1_Intelligence_2/textes/GerminalUTF8.txt", "utf-8"]
+            "args": ["C:/travail/C62_DextrazeAntoine_PoncsakVincent/textes/GerminalUTF8.txt", "utf-8"]
         },
         {
             "name": "LesTroisMousquetairesUTF8",
@@ -27,7 +27,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["C:/travail/TP1_Intelligence_2/textes/LesTroisMousquetairesUTF8.txt", "utf-8"]
+            "args": ["C:/travail/C62_DextrazeAntoine_PoncsakVincent/textes/LesTroisMousquetairesUTF8.txt", "utf-8"]
         },
         {
             "name": "LeVentreDeParisUTF8",
@@ -35,7 +35,15 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["C:/travail/TP1_Intelligence_2/textes/LeVentreDeParisUTF8.txt", "utf-8"]
+            "args": ["C:/travail/C62_DextrazeAntoine_PoncsakVincent/textes/LeVentreDeParisUTF8.txt", "utf-8"]
+        },
+        {
+            "name": "Test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["C:/travail/C62_DextrazeAntoine_PoncsakVincent/textes/Test.txt", "utf-8"]
         }
     ]
 }
