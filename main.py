@@ -13,7 +13,10 @@ def main():
     commande_complete = ""
     while commande_complete != "q":
         commande_complete = input("Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2\r\nTapez q pour quitter.\r\n")
-        recherche = Recherche(chemin,encodage,entrainementText.matrice,entrainementText.dict,commande_complete)
+        mot = commande_complete.split()[0]
+        nb_synonymes = commande_complete.split()[1]
+        methode = commande_complete.split()[2]
+        recherche = Recherche(chemin,encodage,entrainementText.matrice,entrainementText.dict,mot,nb_synonymes,methode)
 
 if __name__ == '__main__':
     quit(main())
