@@ -17,6 +17,14 @@ def main():
         nb_synonymes = commande_complete.split()[1]
         methode = commande_complete.split()[2]
         recherche = Recherche(chemin,encodage,entrainementText.matrice,entrainementText.dict,mot,nb_synonymes,methode)
+        print("\r")
+        for key, value in recherche.resultat.items():
+            nombre = value.item()
+            
+            print(f"{key} --> {nombre}")
+        print("\r")
+
+        
 
 if __name__ == '__main__':
     quit(main())
