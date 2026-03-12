@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "name": "DonQuichotte",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "F:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/DonQuichotteUTF8.txt"]
+        },
+        {
+            "name": "DonQuichotteEntrainement",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-e", "-t", "5", "--encodage", "utf-8", "--chemin", "F:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/DonQuichotteUTF8.txt"]
+        },
+        {
+            "name": "Prediction",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-p", "-t", "5"]
+        },
+        {
+            "name": "GerminalUTF8",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "F:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/GerminalUTF8.txt"]
+        },
+        {
+            "name": "LesTroisMousquetairesUTF8",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "F:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LesTroisMousquetairesUTF8.txt"]
+        },
+        {
+            "name": "LeVentreDeParisUTF8",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "F:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LeVentreDeParisUTF8.txt"]
+        },
+        {
+            "name": "Test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "F:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/Test.txt"]
+        }
+    ]
+}
