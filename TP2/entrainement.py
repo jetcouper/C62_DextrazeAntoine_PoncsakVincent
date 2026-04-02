@@ -3,16 +3,17 @@ import numpy as np
 import re
 
 class Entrainement:
-    def __init__(self,chemin,encodage,fenetre):
+    def __init__(self):
+        self.matrice = None
+        self.dict = None
         #word_list = ["apple", "banana", "cherry", "date"]
         #num_columns = 10 # Example: specify the desired number of columns
 
         # Define the shape of the 2D array using the length of the word list
         # Shape format is (rows, columns)
-        self.matrice, self.dict = self.creationMatrice(self.creationTexte(chemin,encodage),fenetre)
+        pass
 
-
-        print("entrainement terminer")
+    
     
     def creationMatrice(self, texte,fenetre):
         list_unique = []
@@ -36,6 +37,9 @@ class Entrainement:
                     voisin = texte[indexVoisin]
                     j = mot_a_index[voisin]
                     zero_matrix[i,j] += 1
+        print("entrainement terminer")
+        self.matrice = zero_matrix
+        self.dict = mot_a_index
         return zero_matrix, mot_a_index
     
     def creationTexte(self,chemin,encodage):
@@ -43,8 +47,5 @@ class Entrainement:
         texte = f.read()
         texte = re.findall(r'\w+' , texte)
         texte_lower = [item.lower() for item in texte]
-        
-            
-
         f.close()
         return texte_lower

@@ -4,19 +4,19 @@ CHEMIN_BD = "cooccurrences.db"
 
 CREER_LEXIQUE = '''
 CREATE TABLE IF NOT EXISTS lexique (
-    id  INTEGER PRIMARY KEY AUTOINCREMENT,
+    id  INTEGER PRIMARY KEY,
     mot TEXT NOT NULL UNIQUE
 )
 '''
 DROP_LEXIQUE = 'DROP TABLE IF EXISTS lexique'
-INSERT_MOT   = 'INSERT INTO lexique (mot) VALUES (?)'
+INSERT_MOT = 'INSERT OR IGNORE INTO lexique (mot, id) VALUES (?, ?)'
 
 CREER_COOCCURRENCES = '''
 CREATE TABLE IF NOT EXISTS cooccurrences (
     mot1_id INTEGER,
     mot2_id INTEGER,
     fenetre INTEGER,
-    compte  INTEGER NOT NULL DEFAULT 1,
+    compte  INTEGER NOT NULL,
     PRIMARY KEY (mot1_id, mot2_id, fenetre),
     FOREIGN KEY (mot1_id) REFERENCES lexique(id),
     FOREIGN KEY (mot2_id) REFERENCES lexique(id)
@@ -26,6 +26,7 @@ DROP_COOCCURRENCES  = 'DROP TABLE IF EXISTS cooccurrences'
 INSERT_COOCCURRENCE = '''
     INSERT INTO cooccurrences (mot1_id, mot2_id, fenetre, compte)
     VALUES (?, ?, ?, ?)
+    ON CONFLICT(mot1_id, mot2_id, fenetre) DO UPDATE SET compte = compte + excluded.compte
 '''
 
 SELECT_LEXIQUE       = 'SELECT mot, id FROM lexique'
@@ -37,16 +38,18 @@ class BaseDeDonnees:
         self.connexion = None
         self.curseur   = None
 
-    def connecter(self):
+    def __enter__(self):
         self.connexion = sqlite3.connect(CHEMIN_BD)
         self.curseur   = self.connexion.cursor()
         self.curseur.execute('PRAGMA foreign_keys = 1')
+        return self
 
-    def deconnecter(self):
+    def __exit__(self, exc_type, exc_val, exc_tb):
         self.curseur.close()
         self.connexion.close()
         self.connexion = None
         self.curseur   = None
+        return False
 
     def creer_tables(self):
         self.curseur.execute(CREER_LEXIQUE)
@@ -63,10 +66,12 @@ class BaseDeDonnees:
         self.creer_tables()
 
     def inserer_mots(self, mots: list):
-        self.curseur.executemany(INSERT_MOT, [(mot,) for mot in mots])
+        self.curseur.executemany(INSERT_MOT, mots)
+        self.connexion.commit()
     
     def inserer_cooccurrences(self, paires: list):
         self.curseur.executemany(INSERT_COOCCURRENCE, paires)
+        self.connexion.commit()
 
     def charger_lexique(self) -> dict:
         self.curseur.execute(SELECT_LEXIQUE)
