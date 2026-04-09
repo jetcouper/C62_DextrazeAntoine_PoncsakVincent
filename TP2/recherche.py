@@ -35,13 +35,10 @@ class Recherche:
         list_mot = list(dictionnaire.keys())
         nb_mot = int(nb_synonymes)
 
-        try:
-            index_mot = dictionnaire[mot]
-        except KeyError:
-            print("Ce mot n'est pas dans le texte")
-            return
-            
+        if mot not in dictionnaire:
+            raise Exception("Ce mot n'est pas dans le texte")
         
+        index_mot = dictionnaire[mot]
         matrice_mot = matrice[index_mot]
         
         for index, valeur in enumerate(matrice):
