@@ -3,16 +3,17 @@ import numpy as np
 import re
 
 class Recherche:
-    def __init__(self,matrice,dictionnaire,mot,nb_synonymes,methode):
-        self.resultat = {}
+    def __init__(self):
+        pass
+        
+    def recherche(self, matrice,dictionnaire,mot,nb_synonymes,methode) -> dict:
         matrice_refait = np.zeros((len(dictionnaire),len(dictionnaire)), dtype=int)
-
         for tuples in matrice:
             mot1_id, mot2_id, compte = tuples
             matrice_refait[mot1_id][mot2_id] = compte
         
 
-        self.resultat = self.calcul(matrice_refait, dictionnaire,mot,int(nb_synonymes),int(methode))
+        return self.calcul(matrice_refait, dictionnaire,mot,int(nb_synonymes),int(methode))
 
     def creationTexte(self, chemin,encodage):
         f = open(chemin, encoding=encodage)

@@ -12,7 +12,6 @@ class Entrainement:
         self._matrice, self._dict = self.creationMatrice(self.texte, fenetre,bd)
         self.miseAJourBD(fenetre)
         
-
     @property
     def matrice(self):
         return self._matrice
@@ -39,13 +38,10 @@ class Entrainement:
 
     def creationMatrice(self, texte,fenetre,bd):
         mot_a_index = self.bd.charger_lexique()
-        # with BaseDeDonnees() as bd:
-        #     zero_matrix = bd.charger_cooccurrences()
 
         for mot in texte:
             if mot not in mot_a_index:
                 mot_a_index[mot] = len(mot_a_index)
-
 
         size = len(mot_a_index)
         # Create the 2D array of zeros with integer data type

@@ -23,21 +23,17 @@ def main():
             
     elif(argp.p):
         #Entrainement à faire avant la prédiction.
+        recherche = Recherche()
         with BaseDeDonnees() as bd:
             commande_complete = ""
             print("Mode prédiction activé")
             commande_complete = input("Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2\r\nTapez q pour quitter.\r\n")
             while commande_complete != "q":
                 try:
-                    # if commande_complete == 'q':
-                    #     break
                     mot, nb_synonymes, methode = commande_complete.split()
-                    recherche = Recherche(bd.charger_cooccurrences(argp.t), bd.charger_lexique(), mot, nb_synonymes, methode)
+                    resultat = recherche.recherche(bd.charger_cooccurrences(argp.t), bd.charger_lexique(), mot, nb_synonymes, methode)
                     print("\r")
-                    # if not recherche.resultat:
-                    #     print("Veuillez faire l'entrainement avant la prédiction.")
-                    #     break
-                    for key, value in recherche.resultat.items():
+                    for key, value in resultat.items():
                         print(f"{key} --> {value}")
                     print("\r")
                 except ValueError:
