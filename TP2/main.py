@@ -7,35 +7,23 @@ import numpy as np
 
 
 def main():
-    
-    
     argument = Argument_terminale()
-    bd = BaseDeDonnees()
     argp =argument.run()
     
     
     if(argp.b):
-        with bd:
+        with BaseDeDonnees() as bd:
             bd.regenerer()
 
     elif(argp.e):
-        with bd:
+        with BaseDeDonnees() as bd:
             print("Mode entrainement activé")
             #À envoyer dans DB
-            entrainementText = Entrainement(argp.chemin, argp.encodage, argp.t,bd)
-            with BaseDeDonnees() as bd:
-                bd.inserer_mots(entrainementText.dict.items())
-            liste_tuple = []
-
-            for i, j in np.argwhere(entrainementText.matrice > 0):
-                    liste_tuple.append((int(i),int(j),argp.t,int(entrainementText.matrice[i,j])))
-
-            with BaseDeDonnees() as bd:
-                bd.inserer_cooccurrences(liste_tuple)
-
+            Entrainement(argp.chemin, argp.encodage, argp.t,bd)
+            
     elif(argp.p):
         #Entrainement à faire avant la prédiction.
-        with bd:
+        with BaseDeDonnees() as bd:
             commande_complete = ""
             print("Mode prédiction activé")
             while commande_complete != "q":

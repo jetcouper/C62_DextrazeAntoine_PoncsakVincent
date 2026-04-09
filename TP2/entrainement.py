@@ -5,10 +5,12 @@ import re
 
 class Entrainement:
     def __init__(self, chemin,encodage,fenetre, bd):
+        self.bd = bd
         self._matrice = None
         self._dict = None
         self.texte = self.creationTexte(chemin = chemin,encodage = encodage)
         self._matrice, self._dict = self.creationMatrice(self.texte, fenetre,bd)
+        self.miseAJourBD(fenetre)
         
 
     @property
@@ -27,10 +29,16 @@ class Entrainement:
     def dictionnaire(self,value):
         self._dict = value
 
+    def miseAJourBD(self, taille):
+        self.bd.inserer_mots(self.dict.items())
+        liste_tuple = []
+        for i, j in np.argwhere(self.matrice > 0):
+            liste_tuple.append((int(i),int(j),taille,int(self.matrice[i,j])))
+        self.bd.inserer_cooccurrences(liste_tuple)
+    
 
     def creationMatrice(self, texte,fenetre,bd):
-        with BaseDeDonnees() as bd:
-            mot_a_index = bd.charger_lexique()
+        mot_a_index = self.bd.charger_lexique()
         # with BaseDeDonnees() as bd:
         #     zero_matrix = bd.charger_cooccurrences()
 
