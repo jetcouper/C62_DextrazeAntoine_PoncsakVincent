@@ -34,6 +34,9 @@ def main():
                     mot, nb_synonymes, methode = commande_complete.split()
                     recherche = Recherche(bd.charger_cooccurrences(argp.t), bd.charger_lexique(), mot, nb_synonymes, methode)
                     print("\r")
+                    if not recherche.resultat:
+                        print("Veuillez faire l'entrainement avant la prédiction.")
+                        break
                     for key, value in recherche.resultat.items():
                         print(f"{key} --> {value}")
                     print("\r")

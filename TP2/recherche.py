@@ -34,10 +34,13 @@ class Recherche:
         score = 0
         list_mot = list(dictionnaire.keys())
         nb_mot = int(nb_synonymes)
+
         try:
             index_mot = dictionnaire[mot]
         except KeyError:
-            print("Ce mot n'est pas présent dans le texte.")
+            print("Ce mot n'est pas dans le texte")
+            return
+            
         
         matrice_mot = matrice[index_mot]
         
