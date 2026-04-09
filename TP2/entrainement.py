@@ -1,29 +1,45 @@
 #Quant tu lis le texte et créer les deux structures
 import numpy as np
+from dao import BaseDeDonnees
 import re
 
 class Entrainement:
-    def __init__(self):
-        self.matrice = None
-        self.dict = None
-        #word_list = ["apple", "banana", "cherry", "date"]
-        #num_columns = 10 # Example: specify the desired number of columns
+    def __init__(self, chemin,encodage,fenetre, bd):
+        self._matrice = None
+        self._dict = None
+        self.texte = self.creationTexte(chemin = chemin,encodage = encodage)
+        self._matrice, self._dict = self.creationMatrice(self.texte, fenetre,bd)
+        
 
-        # Define the shape of the 2D array using the length of the word list
-        # Shape format is (rows, columns)
-        pass
-
+    @property
+    def matrice(self):
+        return self._matrice
     
+    @matrice.setter
+    def matrice(self,value):
+        self._matrice = value
     
-    def creationMatrice(self, texte,fenetre):
-        list_unique = []
-        for i in texte:
-            if i not in list_unique:
-                list_unique.append(i)
+    @property
+    def dictionnaire(self):
+        return self._dict
+    
+    @matrice.setter
+    def dictionnaire(self,value):
+        self._dict = value
 
 
-        mot_a_index = {word: index for index, word in enumerate(list_unique)}
-        size = len(list_unique)
+    def creationMatrice(self, texte,fenetre,bd):
+        with BaseDeDonnees() as bd:
+            mot_a_index = bd.charger_lexique()
+        # with BaseDeDonnees() as bd:
+        #     zero_matrix = bd.charger_cooccurrences()
+
+        for mot in texte:
+            if mot not in mot_a_index:
+                mot_a_index[mot] = len(mot_a_index)
+
+
+        size = len(mot_a_index)
         # Create the 2D array of zeros with integer data type
         zero_matrix = np.zeros((size,size), dtype=int)
         demi_fenetre = fenetre//2
@@ -44,8 +60,7 @@ class Entrainement:
     
     def creationTexte(self,chemin,encodage):
         f = open(chemin, encoding=encodage)
-        texte = f.read()
+        texte = f.read().lower()
         texte = re.findall(r'\w+' , texte)
-        texte_lower = [item.lower() for item in texte]
         f.close()
-        return texte_lower
+        return texte

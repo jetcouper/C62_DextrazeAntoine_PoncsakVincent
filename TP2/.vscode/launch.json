@@ -6,6 +6,14 @@
     "configurations": [
     
         {
+            "name": "Regénérer",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-b"]
+        },
+        {
             "name": "DonQuichotte",
             "type": "debugpy",
             "request": "launch",
@@ -35,7 +43,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/GerminalUTF8.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/GerminalUTF8.txt"]
         },
         {
             "name": "LesTroisMousquetairesUTF8",
@@ -43,7 +51,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LesTroisMousquetairesUTF8.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LesTroisMousquetairesUTF8.txt"]
         },
         {
             "name": "LeVentreDeParisUTF8",
@@ -51,7 +59,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LeVentreDeParisUTF8.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LeVentreDeParisUTF8.txt"]
         },
         {
             "name": "Test",
@@ -59,7 +67,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/Test.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/Test.txt"]
         }
     ]
 }

@@ -1,6 +1,5 @@
 from sys import argv, exit
 from entrainement import Entrainement
-from entrainement_to_BD import Entrainement_BD
 from recherche import Recherche
 from argument import Argument_terminale
 from dao import BaseDeDonnees
@@ -9,30 +8,30 @@ import numpy as np
 
 def main():
     
-    entrainementText = Entrainement()
+    
     argument = Argument_terminale()
     bd = BaseDeDonnees()
     argp =argument.run()
+    
     
     if(argp.b):
         with bd:
             bd.regenerer()
 
-
     elif(argp.e):
         with bd:
             print("Mode entrainement activé")
             #À envoyer dans DB
-            entrainement_bd = Entrainement_BD()
-            matrice, dict = entrainementText.creationMatrice(entrainementText.creationTexte(argp.chemin,argp.encodage),argp.t)
-            entrainement_bd.insertion_mots(dict.items())
+            entrainementText = Entrainement(argp.chemin, argp.encodage, argp.t,bd)
+            with BaseDeDonnees() as bd:
+                bd.inserer_mots(entrainementText.dict.items())
             liste_tuple = []
 
-            for i, j in np.argwhere(matrice > 0):
-                    liste_tuple.append((int(i),int(j),argp.t,int(matrice[i,j])))
+            for i, j in np.argwhere(entrainementText.matrice > 0):
+                    liste_tuple.append((int(i),int(j),argp.t,int(entrainementText.matrice[i,j])))
 
-            #lexique_bd = entrainement_bd.chargement_lexique()
-            entrainement_bd.insertion_coocurrences(liste_tuple)
+            with BaseDeDonnees() as bd:
+                bd.inserer_cooccurrences(liste_tuple)
 
     elif(argp.p):
         #Entrainement à faire avant la prédiction.

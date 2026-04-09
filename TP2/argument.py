@@ -20,17 +20,11 @@ class Argument_terminale():
           
         if (argp.e or argp.p) and not argp.t:
             parser.error("-t est requis avec -e et -p")
+
         elif argp.t is not None and argp.t <= 0:
             parser.error("-t doit être un entier positif")
 
         if argp.e and argp.chemin is None:
             parser.error("--chemin est requis avec -e")
-
-        #pas necessaire pour le format cli
-        #parser.add_argument("-q", action="store_true", help="Quitter le programme")
-
-
         
         return argp
-        
-        #if(argp.b):
