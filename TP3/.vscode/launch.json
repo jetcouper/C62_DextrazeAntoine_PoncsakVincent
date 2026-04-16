@@ -6,6 +6,14 @@
     "configurations": [
     
         {
+            "name": "Clustering",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["-c", "-t", "5", "-k", "5" , "-n", "10"]
+        },
+        {
             "name": "Regénérer",
             "type": "debugpy",
             "request": "launch",
@@ -19,15 +27,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-e", "-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/DonQuichotteUTF8.txt"]
-        },
-        {
-            "name": "DonQuichotteEntrainement",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/main.py",
-            "console": "integratedTerminal",
-            "args": ["-e", "-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/DonQuichotteUTF8.txt"]
+            "args": ["-e", "-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP3/textes/DonQuichotteUTF8.txt"]
         },
         {
             "name": "Prediction",
@@ -43,7 +43,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/GerminalUTF8.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP3/textes/GerminalUTF8.txt"]
         },
         {
             "name": "LesTroisMousquetairesUTF8",
@@ -51,7 +51,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LesTroisMousquetairesUTF8.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP3/textes/LesTroisMousquetairesUTF8.txt"]
         },
         {
             "name": "LeVentreDeParisUTF8",
@@ -59,7 +59,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/LeVentreDeParisUTF8.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP3/textes/LeVentreDeParisUTF8.txt"]
         },
         {
             "name": "Test",
@@ -67,7 +67,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP2/textes/Test.txt"]
+            "args": ["-e","-t", "5", "--encodage", "utf-8", "--chemin", "C:/travail/C62_DextrazeAntoine_PoncsakVincent/TP3/textes/Test.txt"]
         }
     ]
 }

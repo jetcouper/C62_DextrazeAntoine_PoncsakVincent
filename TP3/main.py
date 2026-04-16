@@ -3,6 +3,7 @@ from entrainement import Entrainement
 from recherche import Recherche
 from argument import Argument_terminale
 from dao import BaseDeDonnees
+from clustering import Clustering
 import numpy as np
 
 
@@ -46,7 +47,12 @@ def main():
                 else:
                     print("Veuillez entrer une commande valide, un mot, un nombre et une méthode.\n")
                     commande_complete = input("Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2\r\nTapez q pour quitter.\r\n")
-        
+    elif(argp.c):
+        with BaseDeDonnees() as bd:
+            commande_complete = ""
+            print("Mode cluster activé")
+            cluster = Clustering(argp.k,bd.charger_cooccurrences(argp.t),bd.charger_lexique())
+         
 
     
 if __name__ == '__main__':
