@@ -9,15 +9,10 @@ class Clustering():
         self.__lexique = lexique
         self.matrice_mot = self.recreerMatriceMot()
 
-        
         self.matrice_cluster = np.zeros(len(lexique), dtype=int)
-
-        #self.matrice_centroide : np.ndarray = np.zeros((nb_k, len(lexique)))
-
-        #Choice pour ne pas avoir la m^me ranger
+        
         self.indices = rd.sample(range(len(lexique)), self.__nb_k)
         self.matrice_centroide = np.array([self.matrice_mot[i] for i in self.indices])
-        #self.matrice_centroide : np.ndarray = np.array([self.matrice_mot[rd.randint(0, len(lexique)-1)] for i in range(self.__nb_k)])
         print("Première assignation de cluster")
         self.assignerCluster()
         print("Premier calcule de centoïde")
@@ -62,6 +57,7 @@ class Clustering():
 
     def assignerCluster(self):
         self.matrice_cluster = np.zeros(len(self.matrice_cluster), dtype=int)
+        
         for i in range(len(self.__lexique)):
             distances = np.sum(np.square(self.matrice_centroide - self.matrice_mot[i]), axis=1)
             self.matrice_cluster[i] = np.argmin(distances)
