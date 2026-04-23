@@ -1,5 +1,6 @@
 import random as rd
 import numpy as np
+from time import perf_counter
 
 
 class Clustering():
@@ -17,21 +18,22 @@ class Clustering():
         self.assignerCluster()
         print("Premier calcule de centoïde")
         self.calculerCentroide()
-        self.fit(50)
+        self.fit()
         pass
 
-    def fit(self, max_iter=100):
+    def fit(self):
         print("Début des itérations")
         compteur = 0
         nb_migration = 0
         ancien_cluster = np.zeros(len(self.matrice_cluster), dtype=int)
         while not np.array_equal(ancien_cluster,self.matrice_cluster):
+            t = perf_counter()
             nb_migration = np.sum(ancien_cluster != self.matrice_cluster)
             compteur += 1 
             ancien_cluster = self.matrice_cluster
             self.calculerCentroide()
             self.assignerCluster()
-            print(f"\r\nItération {compteur}")
+            print(f"\r\nItération {compteur} : {(perf_counter() - t):.2f} secondes")
             print(f"{nb_migration} migrations.")
             print("\r\n ************************ \r\n")
             for i in range(self.__nb_k):
@@ -50,15 +52,18 @@ class Clustering():
 
     def calculerCentroide(self):
         for k in range(self.__nb_k):
-            mot_cluster = self.matrice_mot[self.matrice_cluster == k]
-            if len(mot_cluster) > 0:
-                self.matrice_centroide[k] = mot_cluster.mean(axis=0)
+            mask = self.matrice_cluster == k
+            if mask.any():
+                self.matrice_centroide[k] = self.matrice_mot[mask].mean(axis=0)
         pass
 
     def assignerCluster(self):
-        self.matrice_cluster = np.zeros(len(self.matrice_cluster), dtype=int)
         
+
+        self.matrice_cluster = np.zeros(len(self.matrice_cluster), dtype=int)
         for i in range(len(self.__lexique)):
-            distances = np.sum(np.square(self.matrice_centroide - self.matrice_mot[i]), axis=1)
-            self.matrice_cluster[i] = np.argmin(distances)
+            # distances = np.sum(np.square(self.matrice_centroide - self.matrice_mot[i]), axis=1)
+            # self.matrice_cluster[i] = np.argmin(distances)
+            distance = [np.sum(np.square(c - self.matrice_mot[i])) for c in self.matrice_centroide]
+            self.matrice_cluster[i] = distance.index(min(distance))
         pass
