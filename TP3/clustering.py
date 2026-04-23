@@ -15,10 +15,13 @@ class Clustering():
         self.indices = rd.sample(range(len(lexique)), self.__nb_k)
         self.matrice_centroide = np.array([self.matrice_mot[i] for i in self.indices])
         print("Première assignation de cluster")
+        t = perf_counter()
         self.assignerCluster()
         print("Premier calcule de centoïde")
         self.calculerCentroide()
+        print(f"\r\nChargement des données en {(perf_counter() - t):.2f} secondes")
         self.fit()
+        
         pass
 
     def fit(self):
