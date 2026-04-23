@@ -52,6 +52,7 @@ def main():
             commande_complete = ""
             print("Mode cluster activé")
             cluster = Clustering(argp.k,bd.charger_cooccurrences(argp.t),bd.charger_lexique())
+            cluster.retourneReponse(argp.n)
          
 
     

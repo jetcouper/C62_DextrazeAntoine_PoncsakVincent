@@ -11,17 +11,18 @@ class Clustering():
         self.matrice_mot = self.recreerMatriceMot()
 
         self.matrice_cluster = np.zeros(len(lexique), dtype=int)
-        
+        t = perf_counter()
         self.indices = rd.sample(range(len(lexique)), self.__nb_k)
         self.matrice_centroide = np.array([self.matrice_mot[i] for i in self.indices])
         print("Première assignation de cluster")
-        t = perf_counter()
+        t2 = perf_counter()
         self.assignerCluster()
         print("Premier calcule de centoïde")
         self.calculerCentroide()
-        print(f"\r\nChargement des données en {(perf_counter() - t):.2f} secondes")
+        print(f"\r\nChargement des données en {(perf_counter() - t2):.2f} secondes")
         self.fit()
-        
+        print(f"Partitionnement en {(perf_counter() - t):.2f} secondes.")
+
         pass
 
     def fit(self):
@@ -37,10 +38,10 @@ class Clustering():
             self.calculerCentroide()
             self.assignerCluster()
             print(f"\r\nItération {compteur} : {(perf_counter() - t):.2f} secondes")
-            print(f"{nb_migration} migrations.")
-            print("\r\n ************************ \r\n")
+            print(f"{nb_migration} migrations.\r\n")
             for i in range(self.__nb_k):
                 print(f"Partition {i} : {np.sum(self.matrice_cluster == i)} mots.")
+            print("\r\n************************\r\n")
 
         if np.array_equal(ancien_cluster,self.matrice_cluster):
             print(f"Arrêt après {compteur} itération")
@@ -61,12 +62,19 @@ class Clustering():
         pass
 
     def assignerCluster(self):
-        
-
         self.matrice_cluster = np.zeros(len(self.matrice_cluster), dtype=int)
         for i in range(len(self.__lexique)):
-            # distances = np.sum(np.square(self.matrice_centroide - self.matrice_mot[i]), axis=1)
-            # self.matrice_cluster[i] = np.argmin(distances)
             distance = [np.sum(np.square(c - self.matrice_mot[i])) for c in self.matrice_centroide]
             self.matrice_cluster[i] = distance.index(min(distance))
+        pass
+
+    def retourneReponse(self, nombre_retour) -> dict:
+        inverse = {v:k for k, v in self.__lexique.items()}
+        mots = {}
+
+        for i in range(self.__nb_k):
+            mots[i] = np.where(self.matrice_cluster == i)[0]
+
+                
+
         pass
