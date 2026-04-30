@@ -2,6 +2,7 @@ import random as rd
 import numpy as np
 from time import perf_counter
 from collections import defaultdict
+import statistics
 
 
 class Clustering():
@@ -52,7 +53,7 @@ class Clustering():
 
     def recreerMatriceMot(self) -> np.ndarray:
         print("Recréation de matrice")
-        matrice_mot = np.zeros((len(self.__lexique), len(self.__lexique)), dtype=int)
+        matrice_mot = np.zeros((len(self.__lexique), len(self.__lexique)), dtype=float)
         for tuples in self.__coocurance:
             mot1_id, mot2_id, compte = tuples
             matrice_mot[mot1_id][mot2_id] = compte
@@ -96,7 +97,7 @@ class Clustering():
         for p in sorted(mots):
             print(f"Partition {p}:")
             for mot in mots[p][:nombre_retour]:
-                print(f"\t{mot[1]} -> {mot[0]}")
+                print(f"\t{mot[1]} -> {float(mot[0]):.2f}")
 
 
 
