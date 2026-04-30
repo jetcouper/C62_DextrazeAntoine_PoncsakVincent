@@ -53,7 +53,7 @@ class Clustering():
 
     def recreerMatriceMot(self) -> np.ndarray:
         print("Recréation de matrice")
-        matrice_mot = np.zeros((len(self.__lexique), len(self.__lexique)), dtype=float)
+        matrice_mot = np.zeros((len(self.__lexique), len(self.__lexique)))
         for tuples in self.__coocurance:
             mot1_id, mot2_id, compte = tuples
             matrice_mot[mot1_id][mot2_id] = compte

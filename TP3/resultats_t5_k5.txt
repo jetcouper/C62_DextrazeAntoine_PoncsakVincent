@@ -1,0 +1,594 @@
+set PYTHONIOENCODING=utf-8
+
+C:\travail\C62_DextrazeAntoine_PoncsakVincent\TP3>python main.py -c -t 5 -k 5 -n 10 > resultats_t5_k5.txt
+
+Mode cluster activé
+Recréation de matrice
+Première assignation de cluster
+Premier calcule de centoïde
+
+
+Chargement des données en 6.76 secondes
+Début des itérations
+
+
+Itération 1 : 5.14 secondes
+17850 migrations.
+
+
+Partition 0 : 23471 mots.
+Partition 1 : 6958 mots.
+Partition 2 : 435 mots.
+Partition 3 : 950 mots.
+Partition 4 : 1356 mots.
+
+
+************************
+
+
+
+
+Itération 2 : 5.14 secondes
+12192 migrations.
+
+
+Partition 0 : 25946 mots.
+Partition 1 : 4416 mots.
+Partition 2 : 139 mots.
+Partition 3 : 1263 mots.
+Partition 4 : 1406 mots.
+
+
+************************
+
+
+
+
+Itération 3 : 5.17 secondes
+3437 migrations.
+
+
+Partition 0 : 27038 mots.
+Partition 1 : 3450 mots.
+Partition 2 : 63 mots.
+Partition 3 : 1707 mots.
+Partition 4 : 912 mots.
+
+
+************************
+
+
+
+
+Itération 4 : 5.17 secondes
+2077 migrations.
+
+
+Partition 0 : 27848 mots.
+Partition 1 : 2919 mots.
+Partition 2 : 44 mots.
+Partition 3 : 1832 mots.
+Partition 4 : 527 mots.
+
+
+************************
+
+
+
+
+Itération 5 : 5.20 secondes
+1668 migrations.
+
+
+Partition 0 : 27960 mots.
+Partition 1 : 3285 mots.
+Partition 2 : 35 mots.
+Partition 3 : 1556 mots.
+Partition 4 : 334 mots.
+
+
+************************
+
+
+
+
+Itération 6 : 5.21 secondes
+894 migrations.
+
+
+Partition 0 : 27994 mots.
+Partition 1 : 3709 mots.
+Partition 2 : 30 mots.
+Partition 3 : 1222 mots.
+Partition 4 : 215 mots.
+
+
+************************
+
+
+
+
+Itération 7 : 5.24 secondes
+875 migrations.
+
+
+Partition 0 : 28406 mots.
+Partition 1 : 3665 mots.
+Partition 2 : 26 mots.
+Partition 3 : 932 mots.
+Partition 4 : 141 mots.
+
+
+************************
+
+
+
+
+Itération 8 : 5.23 secondes
+864 migrations.
+
+
+Partition 0 : 29010 mots.
+Partition 1 : 3324 mots.
+Partition 2 : 24 mots.
+Partition 3 : 724 mots.
+Partition 4 : 88 mots.
+
+
+************************
+
+
+
+
+Itération 9 : 5.19 secondes
+924 migrations.
+
+
+Partition 0 : 29642 mots.
+Partition 1 : 2911 mots.
+Partition 2 : 19 mots.
+Partition 3 : 537 mots.
+Partition 4 : 61 mots.
+
+
+************************
+
+
+
+
+Itération 10 : 5.17 secondes
+888 migrations.
+
+
+Partition 0 : 30283 mots.
+Partition 1 : 2432 mots.
+Partition 2 : 13 mots.
+Partition 3 : 391 mots.
+Partition 4 : 51 mots.
+
+
+************************
+
+
+
+
+Itération 11 : 5.30 secondes
+825 migrations.
+
+
+Partition 0 : 30846 mots.
+Partition 1 : 1958 mots.
+Partition 2 : 12 mots.
+Partition 3 : 310 mots.
+Partition 4 : 44 mots.
+
+
+************************
+
+
+
+
+Itération 12 : 5.15 secondes
+661 migrations.
+
+
+Partition 0 : 31252 mots.
+Partition 1 : 1613 mots.
+Partition 2 : 9 mots.
+Partition 3 : 255 mots.
+Partition 4 : 41 mots.
+
+
+************************
+
+
+
+
+Itération 13 : 5.31 secondes
+476 migrations.
+
+
+Partition 0 : 31574 mots.
+Partition 1 : 1346 mots.
+Partition 2 : 7 mots.
+Partition 3 : 204 mots.
+Partition 4 : 39 mots.
+
+
+************************
+
+
+
+
+Itération 14 : 5.22 secondes
+383 migrations.
+
+
+Partition 0 : 31826 mots.
+Partition 1 : 1142 mots.
+Partition 2 : 7 mots.
+Partition 3 : 159 mots.
+Partition 4 : 36 mots.
+
+
+************************
+
+
+
+
+Itération 15 : 5.35 secondes
+303 migrations.
+
+
+Partition 0 : 32054 mots.
+Partition 1 : 944 mots.
+Partition 2 : 7 mots.
+Partition 3 : 130 mots.
+Partition 4 : 35 mots.
+
+
+************************
+
+
+
+
+Itération 16 : 5.26 secondes
+259 migrations.
+
+
+Partition 0 : 32212 mots.
+Partition 1 : 812 mots.
+Partition 2 : 7 mots.
+Partition 3 : 107 mots.
+Partition 4 : 32 mots.
+
+
+************************
+
+
+
+
+Itération 17 : 5.27 secondes
+187 migrations.
+
+
+Partition 0 : 32343 mots.
+Partition 1 : 708 mots.
+Partition 2 : 7 mots.
+Partition 3 : 83 mots.
+Partition 4 : 29 mots.
+
+
+************************
+
+
+
+
+Itération 18 : 5.17 secondes
+161 migrations.
+
+
+Partition 0 : 32476 mots.
+Partition 1 : 591 mots.
+Partition 2 : 7 mots.
+Partition 3 : 68 mots.
+Partition 4 : 28 mots.
+
+
+************************
+
+
+
+
+Itération 19 : 5.30 secondes
+150 migrations.
+
+
+Partition 0 : 32570 mots.
+Partition 1 : 506 mots.
+Partition 2 : 7 mots.
+Partition 3 : 61 mots.
+Partition 4 : 26 mots.
+
+
+************************
+
+
+
+
+Itération 20 : 5.26 secondes
+105 migrations.
+
+
+Partition 0 : 32648 mots.
+Partition 1 : 443 mots.
+Partition 2 : 7 mots.
+Partition 3 : 48 mots.
+Partition 4 : 24 mots.
+
+
+************************
+
+
+
+
+Itération 21 : 5.25 secondes
+95 migrations.
+
+
+Partition 0 : 32715 mots.
+Partition 1 : 382 mots.
+Partition 2 : 7 mots.
+Partition 3 : 43 mots.
+Partition 4 : 23 mots.
+
+
+************************
+
+
+
+
+Itération 22 : 5.23 secondes
+74 migrations.
+
+
+Partition 0 : 32752 mots.
+Partition 1 : 347 mots.
+Partition 2 : 7 mots.
+Partition 3 : 41 mots.
+Partition 4 : 23 mots.
+
+
+************************
+
+
+
+
+Itération 23 : 5.26 secondes
+39 migrations.
+
+
+Partition 0 : 32776 mots.
+Partition 1 : 324 mots.
+Partition 2 : 7 mots.
+Partition 3 : 40 mots.
+Partition 4 : 23 mots.
+
+
+************************
+
+
+
+
+Itération 24 : 5.25 secondes
+25 migrations.
+
+
+Partition 0 : 32786 mots.
+Partition 1 : 317 mots.
+Partition 2 : 7 mots.
+Partition 3 : 38 mots.
+Partition 4 : 22 mots.
+
+
+************************
+
+
+
+
+Itération 25 : 5.42 secondes
+14 migrations.
+
+
+Partition 0 : 32796 mots.
+Partition 1 : 310 mots.
+Partition 2 : 7 mots.
+Partition 3 : 35 mots.
+Partition 4 : 22 mots.
+
+
+************************
+
+
+
+
+Itération 26 : 5.43 secondes
+13 migrations.
+
+
+Partition 0 : 32805 mots.
+Partition 1 : 305 mots.
+Partition 2 : 7 mots.
+Partition 3 : 31 mots.
+Partition 4 : 22 mots.
+
+
+************************
+
+
+
+
+Itération 27 : 5.37 secondes
+13 migrations.
+
+
+Partition 0 : 32817 mots.
+Partition 1 : 293 mots.
+Partition 2 : 7 mots.
+Partition 3 : 33 mots.
+Partition 4 : 20 mots.
+
+
+************************
+
+
+
+
+Itération 28 : 5.48 secondes
+14 migrations.
+
+
+Partition 0 : 32824 mots.
+Partition 1 : 288 mots.
+Partition 2 : 7 mots.
+Partition 3 : 31 mots.
+Partition 4 : 20 mots.
+
+
+************************
+
+
+
+
+Itération 29 : 5.55 secondes
+9 migrations.
+
+
+Partition 0 : 32833 mots.
+Partition 1 : 279 mots.
+Partition 2 : 7 mots.
+Partition 3 : 31 mots.
+Partition 4 : 20 mots.
+
+
+************************
+
+
+
+
+Itération 30 : 5.56 secondes
+9 migrations.
+
+
+Partition 0 : 32840 mots.
+Partition 1 : 272 mots.
+Partition 2 : 7 mots.
+Partition 3 : 31 mots.
+Partition 4 : 20 mots.
+
+
+************************
+
+
+
+
+Itération 31 : 5.57 secondes
+7 migrations.
+
+
+Partition 0 : 32841 mots.
+Partition 1 : 271 mots.
+Partition 2 : 7 mots.
+Partition 3 : 31 mots.
+Partition 4 : 20 mots.
+
+
+************************
+
+
+
+
+Itération 32 : 5.25 secondes
+1 migrations.
+
+
+Partition 0 : 32842 mots.
+Partition 1 : 270 mots.
+Partition 2 : 7 mots.
+Partition 3 : 31 mots.
+Partition 4 : 20 mots.
+
+
+************************
+
+
+
+
+Itération 33 : 5.30 secondes
+1 migrations.
+
+
+Partition 0 : 32842 mots.
+Partition 1 : 270 mots.
+Partition 2 : 7 mots.
+Partition 3 : 31 mots.
+Partition 4 : 20 mots.
+
+
+************************
+
+
+Arrêt après 33 itération
+Partitionnement en 181.16 secondes.
+Partition 0:
+	scrofule -> 7.63
+	_philis_ -> 7.63
+	dégrossir -> 7.63
+	coque -> 7.89
+	pressentir -> 7.99
+	continuité -> 8.25
+	encombrement -> 8.28
+	avènement -> 8.28
+	révocation -> 8.28
+	approuvant -> 8.51
+Partition 1:
+	prendre -> 10825.75
+	florent -> 11725.78
+	mal -> 11961.33
+	cependant -> 14266.00
+	toujours -> 14459.54
+	enfin -> 14827.00
+	seulement -> 15603.29
+	avant -> 15716.04
+	fort -> 16248.21
+	parler -> 16304.49
+Partition 2:
+	et -> 6526394.90
+	à -> 8287265.76
+	le -> 9169637.47
+	l -> 10578189.76
+	il -> 25841982.04
+	la -> 33776045.18
+	de -> 59237398.61
+Partition 3:
+	mais -> 303029.93
+	même -> 311725.22
+	comme -> 398331.29
+	tout -> 413811.87
+	avec -> 445060.71
+	si -> 455992.77
+	par -> 492676.77
+	bien -> 530949.67
+	plus -> 549742.64
+	me -> 631462.00
+Partition 4:
+	lui -> 1055844.04
+	se -> 1787484.64
+	en -> 1860831.34
+	des -> 2041131.84
+	était -> 2274081.04
+	s -> 2406246.54
+	qui -> 2567576.34
+	vous -> 3576001.24
+	ce -> 3597120.34
+	une -> 4488193.74
