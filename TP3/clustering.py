@@ -1,6 +1,7 @@
 import random as rd
 import numpy as np
 from time import perf_counter
+from collections import defaultdict
 
 
 class Clustering():
@@ -9,6 +10,7 @@ class Clustering():
         self.__coocurance = coocurance
         self.__lexique = lexique
         self.matrice_mot = self.recreerMatriceMot()
+
 
         self.matrice_cluster = np.zeros(len(lexique), dtype=int)
         t = perf_counter()
@@ -22,8 +24,9 @@ class Clustering():
         print(f"\r\nChargement des données en {(perf_counter() - t2):.2f} secondes")
         self.fit()
         print(f"Partitionnement en {(perf_counter() - t):.2f} secondes.")
+        
 
-        pass
+        
 
     def fit(self):
         print("Début des itérations")
@@ -46,6 +49,7 @@ class Clustering():
         if np.array_equal(ancien_cluster,self.matrice_cluster):
             print(f"Arrêt après {compteur} itération")
     
+
     def recreerMatriceMot(self) -> np.ndarray:
         print("Recréation de matrice")
         matrice_mot = np.zeros((len(self.__lexique), len(self.__lexique)), dtype=int)
@@ -54,27 +58,52 @@ class Clustering():
             matrice_mot[mot1_id][mot2_id] = compte
         return matrice_mot
 
+    def obtenirMotProche(self,lexique_inverse)->defaultdict[list]:
+        
+        partition = 0
+        mots = defaultdict(list)
+
+        for j in range(len(lexique_inverse)):
+            partition = self.matrice_cluster[j]
+            distance = np.sum(np.square(self.matrice_centroide[partition] - self.matrice_mot[j]))
+
+            mots[partition].append((distance, lexique_inverse[j]))
+        
+        for p in mots:
+            mots[p] = sorted(mots[p], key=lambda x : x[0], reverse=False)
+        
+
+        return mots
+
     def calculerCentroide(self):
         for k in range(self.__nb_k):
             mask = self.matrice_cluster == k
             if mask.any():
                 self.matrice_centroide[k] = self.matrice_mot[mask].mean(axis=0)
-        pass
+        
 
     def assignerCluster(self):
         self.matrice_cluster = np.zeros(len(self.matrice_cluster), dtype=int)
         for i in range(len(self.__lexique)):
             distance = [np.sum(np.square(c - self.matrice_mot[i])) for c in self.matrice_centroide]
             self.matrice_cluster[i] = distance.index(min(distance))
-        pass
+        
 
     def retourneReponse(self, nombre_retour) -> dict:
         inverse = {v:k for k, v in self.__lexique.items()}
-        mots = {}
+        mots = self.obtenirMotProche(inverse)
 
-        for i in range(self.__nb_k):
-            mots[i] = np.where(self.matrice_cluster == i)[0]
+        for p in sorted(mots):
+            print(f"Partition {p}:")
+            for mot in mots[p][:nombre_retour]:
+                print(f"\t{mot[1]} -> {mot[0]}")
+
+
+
+
+        #for i in range(self.__nb_k):
+        #    mots[i] = np.where(self.matrice_cluster == i)[0]
 
                 
 
-        pass
+        
