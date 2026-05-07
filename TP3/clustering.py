@@ -8,9 +8,10 @@ import statistics
 class Clustering():
     def __init__(self, nb_k, coocurance , lexique : dict[str, int]):
         self.__nb_k = nb_k
-        self.__coocurance = coocurance
         self.__lexique = lexique
-        self.matrice_mot = self.recreerMatriceMot()
+        self.matrice_mot = coocurance
+
+
 
 
         self.matrice_cluster = np.zeros(len(lexique), dtype=int)
@@ -20,7 +21,7 @@ class Clustering():
         print("Première assignation de cluster")
         t2 = perf_counter()
         self.assignerCluster()
-        print("Premier calcule de centoïde")
+        print("Premier calcule de centroïde")
         self.calculerCentroide()
         print(f"\r\nChargement des données en {(perf_counter() - t2):.2f} secondes")
         self.fit()
@@ -50,14 +51,6 @@ class Clustering():
         if np.array_equal(ancien_cluster,self.matrice_cluster):
             print(f"Arrêt après {compteur} itération")
     
-
-    def recreerMatriceMot(self) -> np.ndarray:
-        print("Recréation de matrice")
-        matrice_mot = np.zeros((len(self.__lexique), len(self.__lexique)))
-        for tuples in self.__coocurance:
-            mot1_id, mot2_id, compte = tuples
-            matrice_mot[mot1_id][mot2_id] = compte
-        return matrice_mot
 
     def obtenirMotProche(self,lexique_inverse)->defaultdict[list]:
         
@@ -99,11 +92,6 @@ class Clustering():
             for mot in mots[p][:nombre_retour]:
                 print(f"\t{mot[1]} -> {float(mot[0]):.2f}")
 
-
-
-
-        #for i in range(self.__nb_k):
-        #    mots[i] = np.where(self.matrice_cluster == i)[0]
 
                 
 

@@ -4,13 +4,11 @@ from dao import BaseDeDonnees
 import re
 
 class Entrainement:
-    def __init__(self, chemin,encodage,fenetre, bd):
+    def __init__(self, fenetre, bd):
         self.bd = bd
         self._matrice = None
         self._dict = None
-        self.texte = self.creationTexte(chemin = chemin,encodage = encodage)
-        self._matrice, self._dict = self.creationMatrice(self.texte, fenetre,bd)
-        self.miseAJourBD(fenetre)
+        self.fenetre = fenetre
         
     @property
     def matrice(self):
@@ -28,15 +26,20 @@ class Entrainement:
     def dictionnaire(self,value):
         self._dict = value
 
-    def miseAJourBD(self, taille):
+    def entrainer(self,chemin,encodage):
+        texte = self.creationTexte(chemin,encodage)
+        self._matrice, self._dict = self.creationMatrice(texte)
+        self.miseAJourBD()
+
+    def miseAJourBD(self):
         self.bd.inserer_mots(self.dict.items())
         liste_tuple = []
         for i, j in np.argwhere(self.matrice > 0):
-            liste_tuple.append((int(i),int(j),taille,int(self.matrice[i,j])))
+            liste_tuple.append((int(i),int(j),self.fenetre,int(self.matrice[i,j])))
         self.bd.inserer_cooccurrences(liste_tuple)
     
 
-    def creationMatrice(self, texte,fenetre,bd):
+    def creationMatrice(self, texte):
         mot_a_index = self.bd.charger_lexique()
 
         for mot in texte:
@@ -46,7 +49,7 @@ class Entrainement:
         size = len(mot_a_index)
         # Create the 2D array of zeros with integer data type
         zero_matrix = np.zeros((size,size), dtype=int)
-        demi_fenetre = fenetre//2
+        demi_fenetre = self.fenetre//2
 
         for index, mot_central in enumerate(texte):
             i = mot_a_index[mot_central]
@@ -68,3 +71,22 @@ class Entrainement:
         texte = re.findall(r'\w+' , texte)
         f.close()
         return texte
+    
+    def chargerBD(self,normaliser=False, conserver = 0):
+        mot_a_index = self.bd.charger_lexique()
+        matrice_coocurance = self.bd.charger_cooccurrences(self.fenetre)
+        if conserver > 0:
+            sommes = np.sum(matrice_coocurance, axis=0)
+            indexes = np.argsort(sommes)[::-1][:conserver]
+            m = np.zeros((len(matrice_coocurance), conserver))
+            m[:] = matrice_coocurance[:, indexes][:]
+            matrice_coocurance = m
+        
+        if normaliser:
+            
+            ...
+        return mot_a_index, matrice_coocurance
+
+
+
+

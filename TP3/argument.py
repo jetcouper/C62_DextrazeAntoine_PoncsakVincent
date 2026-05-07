@@ -16,6 +16,9 @@ class Argument_terminale():
         parser.add_argument("-c", action="store_true", help="Mode clustering")
         parser.add_argument("-k", type=int, help="Nombre de centroïdes")
         parser.add_argument("-n", type=int, help="Nb de mots à afficher par cluste")
+        parser.add_argument("--normaliser" , action="store_true", help="Normalisation")
+        parser.add_argument("--graphe" , action="store_true", help="Graphique")
+        parser.add_argument("--conserver" , type=int, default=0, help="Conservation")
         argp = parser.parse_args()
 
         if sum([argp.e, argp.p, argp.b, argp.c]) != 1:

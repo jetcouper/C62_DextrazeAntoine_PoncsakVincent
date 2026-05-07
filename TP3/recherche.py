@@ -7,10 +7,7 @@ class Recherche:
         pass
         
     def recherche(self, matrice,dictionnaire,mot,nb_synonymes,methode) -> dict:
-        matrice_refait = np.zeros((len(dictionnaire),len(dictionnaire)), dtype=int)
-        for tuples in matrice:
-            mot1_id, mot2_id, compte = tuples
-            matrice_refait[mot1_id][mot2_id] = compte
+        matrice_refait = matrice
         
 
         return self.calcul(matrice_refait, dictionnaire,mot,int(nb_synonymes),int(methode))

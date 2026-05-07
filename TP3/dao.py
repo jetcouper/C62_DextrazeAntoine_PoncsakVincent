@@ -1,4 +1,5 @@
 import sqlite3
+import numpy as np
 
 CHEMIN_BD = "cooccurrences.db"
 
@@ -77,6 +78,13 @@ class BaseDeDonnees:
         self.curseur.execute(SELECT_LEXIQUE)
         return {mot: id_ for mot, id_ in self.curseur.fetchall()}
 
-    def charger_cooccurrences(self, fenetre: int) -> list:
+    def charger_cooccurrences(self, fenetre: int) -> np.ndarray:
+        taille = len(self.charger_lexique())
         self.curseur.execute(SELECT_COOCCURRENCES, (fenetre,))
-        return self.curseur.fetchall()
+        matrice_mot = np.zeros((taille, taille))
+        for mot1_id, mot2_id, compte in self.curseur.fetchall():
+            matrice_mot[mot1_id][mot2_id] = compte
+        return matrice_mot
+
+
+        #return self.curseur.fetchall()

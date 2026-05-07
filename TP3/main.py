@@ -20,7 +20,8 @@ def main():
         with BaseDeDonnees() as bd:
             print("Mode entrainement activé")
             #À envoyer dans DB
-            Entrainement(argp.chemin, argp.encodage, argp.t,bd)
+            entraineur = Entrainement( argp.t,bd)
+            entraineur.entrainer(argp.chemin, argp.encodage)
             
     elif(argp.p):
         #Entrainement à faire avant la prédiction.
@@ -49,10 +50,13 @@ def main():
                     commande_complete = input("Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2\r\nTapez q pour quitter.\r\n")
     elif(argp.c):
         with BaseDeDonnees() as bd:
+            entraineur = Entrainement( argp.t,bd)
+            mot_a_index, matrice_coocurance = entraineur.chargerBD(argp.normaliser, argp.conserver)
             commande_complete = ""
             print("Mode cluster activé")
-            cluster = Clustering(argp.k,bd.charger_cooccurrences(argp.t),bd.charger_lexique())
+            cluster = Clustering(argp.k,matrice_coocurance,mot_a_index)
             cluster.retourneReponse(argp.n)
+    
          
 
     
