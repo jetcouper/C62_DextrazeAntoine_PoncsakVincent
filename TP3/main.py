@@ -68,6 +68,7 @@ def main():
                 plt.title("Nombre de migrations en fonction du nombre d’itérations")
                 plt.grid(True)
                 plt.show()
+                input("Appuyez sur Entrée pour fermer...")
     
          
 

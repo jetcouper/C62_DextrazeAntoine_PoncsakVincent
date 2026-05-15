@@ -29,7 +29,14 @@
             "console": "integratedTerminal",
             "args": ["--conserver" , "10000", "--normaliser","-c", "-t", "5", "-k", "5" , "-n", "10"]
         },
-
+        {
+            "name": "Clustering - Conservation - Normalisation - Graph",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["--graph", "--conserver" , "10000", "--normaliser","-c", "-t", "5", "-k", "5" , "-n", "10"]
+        },
 
         {
             "name": "Regénérer",

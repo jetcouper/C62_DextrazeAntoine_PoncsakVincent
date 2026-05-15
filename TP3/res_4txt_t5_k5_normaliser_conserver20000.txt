@@ -1,0 +1,647 @@
+Chargement des données effectué en 47.91 secondes.
+
+Itération 1 : 4.58 secondes.
+33170 migrations.
+
+Partition 0 : 6782 mots.
+Partition 1 : 5941 mots.
+Partition 2 : 4326 mots.
+Partition 3 : 5151 mots.
+Partition 4 : 10970 mots.
+
+*************************
+
+Itération 2 : 5.21 secondes.
+8214 migrations.
+
+Partition 0 : 5625 mots.
+Partition 1 : 5018 mots.
+Partition 2 : 5621 mots.
+Partition 3 : 5918 mots.
+Partition 4 : 10988 mots.
+
+*************************
+
+Itération 3 : 5.16 secondes.
+3611 migrations.
+
+Partition 0 : 4759 mots.
+Partition 1 : 4574 mots.
+Partition 2 : 6327 mots.
+Partition 3 : 6068 mots.
+Partition 4 : 11442 mots.
+
+*************************
+
+Itération 4 : 5.12 secondes.
+1633 migrations.
+
+Partition 0 : 4545 mots.
+Partition 1 : 4392 mots.
+Partition 2 : 6664 mots.
+Partition 3 : 5788 mots.
+Partition 4 : 11781 mots.
+
+*************************
+
+Itération 5 : 5.21 secondes.
+1034 migrations.
+
+Partition 0 : 4457 mots.
+Partition 1 : 4358 mots.
+Partition 2 : 6834 mots.
+Partition 3 : 5451 mots.
+Partition 4 : 12070 mots.
+
+*************************
+
+Itération 6 : 5.12 secondes.
+723 migrations.
+
+Partition 0 : 4438 mots.
+Partition 1 : 4341 mots.
+Partition 2 : 6920 mots.
+Partition 3 : 5192 mots.
+Partition 4 : 12279 mots.
+
+*************************
+
+Itération 7 : 5.15 secondes.
+491 migrations.
+
+Partition 0 : 4427 mots.
+Partition 1 : 4331 mots.
+Partition 2 : 6977 mots.
+Partition 3 : 5084 mots.
+Partition 4 : 12351 mots.
+
+*************************
+
+Itération 8 : 5.15 secondes.
+305 migrations.
+
+Partition 0 : 4423 mots.
+Partition 1 : 4325 mots.
+Partition 2 : 7009 mots.
+Partition 3 : 5052 mots.
+Partition 4 : 12361 mots.
+
+*************************
+
+Itération 9 : 5.26 secondes.
+266 migrations.
+
+Partition 0 : 4421 mots.
+Partition 1 : 4311 mots.
+Partition 2 : 7022 mots.
+Partition 3 : 5023 mots.
+Partition 4 : 12393 mots.
+
+*************************
+
+Itération 10 : 5.09 secondes.
+286 migrations.
+
+Partition 0 : 4424 mots.
+Partition 1 : 4290 mots.
+Partition 2 : 7021 mots.
+Partition 3 : 4976 mots.
+Partition 4 : 12459 mots.
+
+*************************
+
+Itération 11 : 5.14 secondes.
+414 migrations.
+
+Partition 0 : 4420 mots.
+Partition 1 : 4268 mots.
+Partition 2 : 7000 mots.
+Partition 3 : 4888 mots.
+Partition 4 : 12594 mots.
+
+*************************
+
+Itération 12 : 5.09 secondes.
+460 migrations.
+
+Partition 0 : 4424 mots.
+Partition 1 : 4236 mots.
+Partition 2 : 6968 mots.
+Partition 3 : 4815 mots.
+Partition 4 : 12727 mots.
+
+*************************
+
+Itération 13 : 5.03 secondes.
+488 migrations.
+
+Partition 0 : 4417 mots.
+Partition 1 : 4202 mots.
+Partition 2 : 6923 mots.
+Partition 3 : 4823 mots.
+Partition 4 : 12805 mots.
+
+*************************
+
+Itération 14 : 5.13 secondes.
+488 migrations.
+
+Partition 0 : 4418 mots.
+Partition 1 : 4160 mots.
+Partition 2 : 6870 mots.
+Partition 3 : 4885 mots.
+Partition 4 : 12837 mots.
+
+*************************
+
+Itération 15 : 5.11 secondes.
+547 migrations.
+
+Partition 0 : 4418 mots.
+Partition 1 : 4109 mots.
+Partition 2 : 6810 mots.
+Partition 3 : 4947 mots.
+Partition 4 : 12886 mots.
+
+*************************
+
+Itération 16 : 5.08 secondes.
+676 migrations.
+
+Partition 0 : 4412 mots.
+Partition 1 : 4068 mots.
+Partition 2 : 6724 mots.
+Partition 3 : 5090 mots.
+Partition 4 : 12876 mots.
+
+*************************
+
+Itération 17 : 5.14 secondes.
+657 migrations.
+
+Partition 0 : 4406 mots.
+Partition 1 : 4021 mots.
+Partition 2 : 6636 mots.
+Partition 3 : 5322 mots.
+Partition 4 : 12785 mots.
+
+*************************
+
+Itération 18 : 5.13 secondes.
+586 migrations.
+
+Partition 0 : 4404 mots.
+Partition 1 : 4001 mots.
+Partition 2 : 6561 mots.
+Partition 3 : 5586 mots.
+Partition 4 : 12618 mots.
+
+*************************
+
+Itération 19 : 5.14 secondes.
+550 migrations.
+
+Partition 0 : 4417 mots.
+Partition 1 : 3987 mots.
+Partition 2 : 6492 mots.
+Partition 3 : 5872 mots.
+Partition 4 : 12402 mots.
+
+*************************
+
+Itération 20 : 5.16 secondes.
+526 migrations.
+
+Partition 0 : 4422 mots.
+Partition 1 : 3965 mots.
+Partition 2 : 6421 mots.
+Partition 3 : 6195 mots.
+Partition 4 : 12167 mots.
+
+*************************
+
+Itération 21 : 5.18 secondes.
+523 migrations.
+
+Partition 0 : 4418 mots.
+Partition 1 : 3960 mots.
+Partition 2 : 6379 mots.
+Partition 3 : 6503 mots.
+Partition 4 : 11910 mots.
+
+*************************
+
+Itération 22 : 5.13 secondes.
+664 migrations.
+
+Partition 0 : 4416 mots.
+Partition 1 : 3962 mots.
+Partition 2 : 6365 mots.
+Partition 3 : 6878 mots.
+Partition 4 : 11549 mots.
+
+*************************
+
+Itération 23 : 5.10 secondes.
+839 migrations.
+
+Partition 0 : 4416 mots.
+Partition 1 : 3970 mots.
+Partition 2 : 6366 mots.
+Partition 3 : 7081 mots.
+Partition 4 : 11337 mots.
+
+*************************
+
+Itération 24 : 5.19 secondes.
+826 migrations.
+
+Partition 0 : 4412 mots.
+Partition 1 : 3985 mots.
+Partition 2 : 6404 mots.
+Partition 3 : 6804 mots.
+Partition 4 : 11565 mots.
+
+*************************
+
+Itération 25 : 5.20 secondes.
+724 migrations.
+
+Partition 0 : 4412 mots.
+Partition 1 : 3979 mots.
+Partition 2 : 6419 mots.
+Partition 3 : 6401 mots.
+Partition 4 : 11959 mots.
+
+*************************
+
+Itération 26 : 5.12 secondes.
+590 migrations.
+
+Partition 0 : 4422 mots.
+Partition 1 : 3986 mots.
+Partition 2 : 6430 mots.
+Partition 3 : 6023 mots.
+Partition 4 : 12309 mots.
+
+*************************
+
+Itération 27 : 5.17 secondes.
+475 migrations.
+
+Partition 0 : 4427 mots.
+Partition 1 : 3985 mots.
+Partition 2 : 6441 mots.
+Partition 3 : 5737 mots.
+Partition 4 : 12580 mots.
+
+*************************
+
+Itération 28 : 5.13 secondes.
+373 migrations.
+
+Partition 0 : 4426 mots.
+Partition 1 : 3988 mots.
+Partition 2 : 6472 mots.
+Partition 3 : 5482 mots.
+Partition 4 : 12802 mots.
+
+*************************
+
+Itération 29 : 5.17 secondes.
+275 migrations.
+
+Partition 0 : 4419 mots.
+Partition 1 : 3985 mots.
+Partition 2 : 6488 mots.
+Partition 3 : 5317 mots.
+Partition 4 : 12961 mots.
+
+*************************
+
+Itération 30 : 5.26 secondes.
+187 migrations.
+
+Partition 0 : 4413 mots.
+Partition 1 : 3980 mots.
+Partition 2 : 6484 mots.
+Partition 3 : 5220 mots.
+Partition 4 : 13073 mots.
+
+*************************
+
+Itération 31 : 5.15 secondes.
+139 migrations.
+
+Partition 0 : 4410 mots.
+Partition 1 : 3979 mots.
+Partition 2 : 6481 mots.
+Partition 3 : 5150 mots.
+Partition 4 : 13150 mots.
+
+*************************
+
+Itération 32 : 5.27 secondes.
+120 migrations.
+
+Partition 0 : 4410 mots.
+Partition 1 : 3964 mots.
+Partition 2 : 6483 mots.
+Partition 3 : 5103 mots.
+Partition 4 : 13210 mots.
+
+*************************
+
+Itération 33 : 5.29 secondes.
+79 migrations.
+
+Partition 0 : 4408 mots.
+Partition 1 : 3959 mots.
+Partition 2 : 6480 mots.
+Partition 3 : 5077 mots.
+Partition 4 : 13246 mots.
+
+*************************
+
+Itération 34 : 5.24 secondes.
+62 migrations.
+
+Partition 0 : 4405 mots.
+Partition 1 : 3959 mots.
+Partition 2 : 6472 mots.
+Partition 3 : 5053 mots.
+Partition 4 : 13281 mots.
+
+*************************
+
+Itération 35 : 5.15 secondes.
+40 migrations.
+
+Partition 0 : 4403 mots.
+Partition 1 : 3957 mots.
+Partition 2 : 6470 mots.
+Partition 3 : 5033 mots.
+Partition 4 : 13307 mots.
+
+*************************
+
+Itération 36 : 5.21 secondes.
+39 migrations.
+
+Partition 0 : 4401 mots.
+Partition 1 : 3963 mots.
+Partition 2 : 6467 mots.
+Partition 3 : 5015 mots.
+Partition 4 : 13324 mots.
+
+*************************
+
+Itération 37 : 5.20 secondes.
+66 migrations.
+
+Partition 0 : 4401 mots.
+Partition 1 : 3967 mots.
+Partition 2 : 6430 mots.
+Partition 3 : 5036 mots.
+Partition 4 : 13336 mots.
+
+*************************
+
+Itération 38 : 5.21 secondes.
+63 migrations.
+
+Partition 0 : 4398 mots.
+Partition 1 : 3969 mots.
+Partition 2 : 6410 mots.
+Partition 3 : 5041 mots.
+Partition 4 : 13352 mots.
+
+*************************
+
+Itération 39 : 5.25 secondes.
+61 migrations.
+
+Partition 0 : 4394 mots.
+Partition 1 : 3977 mots.
+Partition 2 : 6399 mots.
+Partition 3 : 5028 mots.
+Partition 4 : 13372 mots.
+
+*************************
+
+Itération 40 : 5.15 secondes.
+52 migrations.
+
+Partition 0 : 4396 mots.
+Partition 1 : 3982 mots.
+Partition 2 : 6400 mots.
+Partition 3 : 4995 mots.
+Partition 4 : 13397 mots.
+
+*************************
+
+Itération 41 : 5.13 secondes.
+36 migrations.
+
+Partition 0 : 4395 mots.
+Partition 1 : 3983 mots.
+Partition 2 : 6405 mots.
+Partition 3 : 4963 mots.
+Partition 4 : 13424 mots.
+
+*************************
+
+Itération 42 : 5.22 secondes.
+30 migrations.
+
+Partition 0 : 4391 mots.
+Partition 1 : 3983 mots.
+Partition 2 : 6409 mots.
+Partition 3 : 4945 mots.
+Partition 4 : 13442 mots.
+
+*************************
+
+Itération 43 : 5.20 secondes.
+24 migrations.
+
+Partition 0 : 4389 mots.
+Partition 1 : 3983 mots.
+Partition 2 : 6409 mots.
+Partition 3 : 4933 mots.
+Partition 4 : 13456 mots.
+
+*************************
+
+Itération 44 : 5.20 secondes.
+19 migrations.
+
+Partition 0 : 4387 mots.
+Partition 1 : 3984 mots.
+Partition 2 : 6410 mots.
+Partition 3 : 4921 mots.
+Partition 4 : 13468 mots.
+
+*************************
+
+Itération 45 : 5.19 secondes.
+8 migrations.
+
+Partition 0 : 4386 mots.
+Partition 1 : 3983 mots.
+Partition 2 : 6411 mots.
+Partition 3 : 4917 mots.
+Partition 4 : 13473 mots.
+
+*************************
+
+Itération 46 : 5.24 secondes.
+7 migrations.
+
+Partition 0 : 4383 mots.
+Partition 1 : 3985 mots.
+Partition 2 : 6412 mots.
+Partition 3 : 4914 mots.
+Partition 4 : 13476 mots.
+
+*************************
+
+Itération 47 : 5.18 secondes.
+6 migrations.
+
+Partition 0 : 4382 mots.
+Partition 1 : 3985 mots.
+Partition 2 : 6414 mots.
+Partition 3 : 4910 mots.
+Partition 4 : 13479 mots.
+
+*************************
+
+Itération 48 : 5.35 secondes.
+5 migrations.
+
+Partition 0 : 4382 mots.
+Partition 1 : 3986 mots.
+Partition 2 : 6415 mots.
+Partition 3 : 4905 mots.
+Partition 4 : 13482 mots.
+
+*************************
+
+Itération 49 : 5.72 secondes.
+6 migrations.
+
+Partition 0 : 4382 mots.
+Partition 1 : 3988 mots.
+Partition 2 : 6416 mots.
+Partition 3 : 4899 mots.
+Partition 4 : 13485 mots.
+
+*************************
+
+Itération 50 : 5.90 secondes.
+7 migrations.
+
+Partition 0 : 4383 mots.
+Partition 1 : 3989 mots.
+Partition 2 : 6416 mots.
+Partition 3 : 4892 mots.
+Partition 4 : 13490 mots.
+
+*************************
+
+Itération 51 : 5.77 secondes.
+2 migrations.
+
+Partition 0 : 4383 mots.
+Partition 1 : 3989 mots.
+Partition 2 : 6416 mots.
+Partition 3 : 4890 mots.
+Partition 4 : 13492 mots.
+
+*************************
+
+Itération 52 : 5.89 secondes.
+3 migrations.
+
+Partition 0 : 4383 mots.
+Partition 1 : 3989 mots.
+Partition 2 : 6414 mots.
+Partition 3 : 4891 mots.
+Partition 4 : 13493 mots.
+
+*************************
+
+Itération 53 : 5.70 secondes.
+1 migrations.
+
+Partition 0 : 4383 mots.
+Partition 1 : 3989 mots.
+Partition 2 : 6414 mots.
+Partition 3 : 4890 mots.
+Partition 4 : 13494 mots.
+
+*************************
+
+Partitionnement en 282.50 secondes.
+
+Partition 0 : 
+	femmes -> 0.25
+	ouvriers -> 0.25
+	chefs -> 0.27
+	camarades -> 0.27
+	yeux -> 0.28
+	murs -> 0.29
+	mores -> 0.29
+	épaules -> 0.29
+	côtes -> 0.29
+	poings -> 0.30
+
+Partition 1 : 
+	porte -> 0.21
+	fosse -> 0.22
+	mer -> 0.22
+	tête -> 0.22
+	reine -> 0.23
+	main -> 0.23
+	compagnie -> 0.23
+	nuit -> 0.23
+	fenêtre -> 0.23
+	conversation -> 0.23
+
+Partition 2 : 
+	nouveau -> 0.25
+	montsou -> 0.26
+	la -> 0.27
+	couleur -> 0.28
+	fer -> 0.28
+	soie -> 0.28
+	bronze -> 0.29
+	tant -> 0.29
+	parler -> 0.29
+	deuil -> 0.29
+
+Partition 3 : 
+	ventre -> 0.33
+	duc -> 0.34
+	vieux -> 0.35
+	vent -> 0.35
+	premier -> 0.35
+	roi -> 0.36
+	médecin -> 0.36
+	secret -> 0.36
+	mousquetaire -> 0.36
+	feu -> 0.36
+
+Partition 4 : 
+	omni -> 0.05
+	toto -> 0.05
+	libertas -> 0.05
+	pauperum -> 0.05
+	tabernas -> 0.05
+	diligite -> 0.05
+	numerabis -> 0.05
+	donde -> 0.05
+	fuera -> 0.05
+	huella -> 0.05
+
