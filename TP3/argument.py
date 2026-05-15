@@ -15,7 +15,7 @@ class Argument_terminale():
         parser.add_argument("--chemin", type=str, help="Chemin du fichier texte")
         parser.add_argument("-c", action="store_true", help="Mode clustering")
         parser.add_argument("-k", type=int, help="Nombre de centroïdes")
-        parser.add_argument("-n", type=int, help="Nb de mots à afficher par cluste")
+        parser.add_argument("-n", type=int, help="Nb de mots à afficher par cluster")
         parser.add_argument("--normaliser" , action="store_true", help="Normalisation")
         parser.add_argument("--graphe" , action="store_true", help="Graphique")
         parser.add_argument("--conserver" , type=int, default=0, help="Conservation")
@@ -36,7 +36,7 @@ class Argument_terminale():
         if argp.e and argp.chemin is None:
             parser.error("--chemin est requis avec -e")
 
-        if argp.k and argp.n is None and argp.c is not None:
-            parser.error("-k et -n sont obligatoire avec -c")
+        if argp.c and (argp.k is None or argp.n is None):
+            parser.error("-k et -n sont obligatoires avec -c")
         
         return argp

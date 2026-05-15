@@ -35,9 +35,15 @@ class Clustering():
         compteur = 0
         nb_migration = 0
         ancien_cluster = np.zeros(len(self.matrice_cluster), dtype=int)
+
+        self.historique_migrations = []
+
         while not np.array_equal(ancien_cluster,self.matrice_cluster):
             t = perf_counter()
             nb_migration = np.sum(ancien_cluster != self.matrice_cluster)
+           
+            self.historique_migrations.append(nb_migration)
+
             compteur += 1 
             ancien_cluster = self.matrice_cluster
             self.calculerCentroide()
@@ -50,7 +56,9 @@ class Clustering():
 
         if np.array_equal(ancien_cluster,self.matrice_cluster):
             print(f"Arrêt après {compteur} itération")
-    
+
+        if len(self.historique_migrations) > 0:
+            self.historique_migrations.pop(0)
 
     def obtenirMotProche(self,lexique_inverse)->defaultdict[list]:
         

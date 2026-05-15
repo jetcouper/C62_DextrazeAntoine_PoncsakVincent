@@ -83,8 +83,13 @@ class Entrainement:
             matrice_coocurance = m
         
         if normaliser:
-            
-            ...
+            norm = np.linalg.norm(matrice_coocurance, axis = 1, keepdims=True)
+
+            #equivalent d'une boucle for qui verify if 0 change pour 1
+            norm[norm == 0] = 1
+
+            matrice_coocurance = matrice_coocurance / norm
+          
         return mot_a_index, matrice_coocurance
 
 

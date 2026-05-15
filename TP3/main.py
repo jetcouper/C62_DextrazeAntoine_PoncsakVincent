@@ -5,6 +5,7 @@ from argument import Argument_terminale
 from dao import BaseDeDonnees
 from clustering import Clustering
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def main():
@@ -56,6 +57,17 @@ def main():
             print("Mode cluster activé")
             cluster = Clustering(argp.k,matrice_coocurance,mot_a_index)
             cluster.retourneReponse(argp.n)
+            
+            if argp.graphe:
+                y = cluster.historique_migrations
+                x = range(1, len(y) + 1) # Crée une liste [1, 2, 3...] pour l'axe X
+                
+                plt.plot(x, y, marker='o') # marker='o' met des petits points sur la ligne
+                plt.xlabel("Itérations")
+                plt.ylabel("Nombre de migrations")
+                plt.title("Nombre de migrations en fonction du nombre d’itérations")
+                plt.grid(True)
+                plt.show()
     
          
 
