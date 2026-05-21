@@ -28,14 +28,15 @@ def main():
         #Entrainement à faire avant la prédiction.
         recherche = Recherche()
         with BaseDeDonnees() as bd:
-            commande_complete = ""
+            matrice = bd.charger_cooccurrences(argp.t)
+            lexique = bd.charger_lexique()
             print("Mode prédiction activé")
-            commande_complete = input("Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2\r\nTapez q pour quitter.\r\n")
+            commande_complete = input("...")
             while commande_complete != "q":
                 if commande_complete != "":
                     try:
                         mot, nb_synonymes, methode = commande_complete.split()
-                        resultat = recherche.recherche(bd.charger_cooccurrences(argp.t), bd.charger_lexique(), mot, nb_synonymes, methode)
+                        resultat = recherche.recherche(matrice, lexique, mot, nb_synonymes, methode)
                         print("\r")
                         for key, value in resultat.items():
                             print(f"{key} --> {value}")
@@ -67,8 +68,9 @@ def main():
                 plt.ylabel("Nombre de migrations")
                 plt.title("Nombre de migrations en fonction du nombre d’itérations")
                 plt.grid(True)
+                plt.savefig("graphique.png")
                 plt.show()
-                input("Appuyez sur Entrée pour fermer...")
+                #input("Appuyez sur Entrée pour fermer...")
     
          
 
