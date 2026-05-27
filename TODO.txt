@@ -1,0 +1,175 @@
+TODO — Expériences à faire TESTE(bras 10 0)
+Entrainement (-e)
+ Comparer les fenêtres : entraîner DonQuichotte avec t=3, t=5, t=10 (régénérer la BD entre chaque) et 
+ noter la différence de qualité en prédiction.
+ 
+ t=3: 
+ Veuillez entrer une commande valide, un mot, un nombre et une méthode.
+
+Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2
+Tapez q pour quitter.
+bras 10 0
+
+plus --> 19822.0
+quichotte --> 15194.0
+sancho --> 14023.0
+est --> 13444.0
+maître --> 10761.0
+chevalier --> 9966.0
+curé --> 9365.0
+don --> 8633.0
+dit --> 8616.0
+faire --> 8348.0
+ 
+ t=5:
+ Veuillez entrer une commande valide, un mot, un nombre et une méthode.
+
+Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2
+Tapez q pour quitter.
+bras 10 0
+
+plus --> 60556.0
+est --> 60268.0
+don --> 57766.0
+quichotte --> 51239.0
+sancho --> 43084.0
+faire --> 29868.0
+dit --> 28626.0
+était --> 28241.0
+maître --> 27992.0
+chevalier --> 26898.0
+ 
+ t=10:
+ Veuillez entrer une commande valide, un mot, un nombre et une méthode.
+
+Entrez un mot, le nombre de synonymes que vous voulez et la méthode de calcule, i.e. produit scalaire: 0, least-squares:1, city-block: 2
+Tapez q pour quitter.
+bras 10 0
+
+est --> 403327.0
+don --> 322132.0
+plus --> 279237.0
+quichotte --> 258103.0
+sancho --> 251531.0
+était --> 179320.0
+dit --> 177368.0
+avait --> 144725.0
+faire --> 129182.0
+chevalier --> 126200.0
+ 
+ 
+ 
+Conclusion: Le nombre de coocurrence augmente à chaque fois que la fenêtre est plus gros et c'est à peu près les même mots qui reviennent.
+
+
+
+
+ Corpus cumulé : entraîner plusieurs livres l'un après l'autre sur la même BD (sans régénérer) 
+ et observer si les clusters thématiques changent.
+ 
+ 
+
+ 
+ Stats BD post-entrainement : ajouter une méthode dans dao.py pour afficher nb mots 
+ dans lexique, nb cooccurrences, taille mémoire matrice — utile pour calibrer --conserver
+ 
+ XXX
+ 
+ 
+ 
+Prédiction / Recherche (-p)
+ Comparer les 3 méthodes sur un même mot (ex: chevalier 5 0 vs chevalier 5 1 vs chevalier 5 2) 
+ pour voir laquelle est la plus pertinente.
+ 
+ Accumulation 4 livres :
+ bras 5 0
+
+	plus --> 301537.0
+	est --> 273371.0
+	était --> 262912.0
+	avait --> 232836.0
+	dit --> 187666.0
+ 
+ 
+ bras 5 1
+
+	pieds --> 26832.0
+	amis --> 32910.0
+	mains --> 33274.0
+	derrière --> 37760.0
+	corps --> 38062.0
+ 
+ bras 5 2
+
+	pieds --> 1698.0
+	lit --> 1724.0
+	cou --> 1734.0
+	épaules --> 1764.0
+	coeur --> 1772.0
+	
+Conclusion: least-squares et city-block semble plus raproché de la réalité.
+ 
+ 
+ Comparer les fenêtres : même mot avec t=3, t=5, t=10 — observer si la fenêtre large capture plus de 
+ contexte sémantique ou plus de bruit.
+ 
+ 
+ 
+ 
+ Tester mots fréquents vs rares : un mot très fréquent (homme) vs un mot rare — la qualité des 
+ voisins change-t-elle ?
+ 
+ 
+ 
+ Ajouter la similarité cosinus dans recherche.py comme méthode 3 (normaliser les vecteurs puis produit scalaire)
+ 
+ 
+ 
+ 
+Clustering (-c)
+ Variations de k : lancer k=3, 5, 8, 10 et comparer la cohérence thématique des partitions 
+ (configs prêtes dans launch.json).
+ 
+ 
+ 
+ Impact de la normalisation : comparer Cluster [sans norm] vs Cluster [norm] sur les mêmes 
+ données — observer si les clusters sont plus équilibrés.
+ 
+ 
+ 
+ 
+ Impact de --conserver : comparer cons=1k, 5k, 10k et sans conservation — trade-off vitesse / qualité.
+ 
+ 
+ 
+ Fenêtre et clustering : lancer t=3 vs t=10 avec k=5 — fenêtre large = clusters plus thématiques ?
+ 
+ 
+ 
+ 
+ Graphe de convergence : lancer les configs + Graph pour k=3, 5, 10 et comparer le nombre d'itérations jusqu'à stabilisation.
+ 
+ 
+ 
+ Optimiser assignerCluster dans clustering.py:87 — remplacer la boucle Python par une opération matricielle numpy (np.argmin 
+ sur les distances vectorisées) pour accélérer les grosses matrices.
+
+
+
+
+DAO (dao.py)
+ Vérifier l'accumulation : entraîner le même texte deux fois sans régénérer → les comptes doublent-ils correctement ? (tester avec Test.txt)
+ 
+ 
+ 
+ Ajouter filtre fréquence minimale dans charger_cooccurrences — ignorer les paires avec compte < seuil pour réduire le bruit.
+ 
+ 
+ 
+ 
+ Tester régénération : Régénérer BD → Entr - DonQuichotte [t=5] → Prédiction [t=5] — vérifier que le pipeline complet fonctionne proprement.
+ 
+ 
+ 
+ 
+ 
