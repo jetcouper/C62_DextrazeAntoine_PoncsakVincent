@@ -67,8 +67,63 @@ Conclusion: Le nombre de coocurrence augmente à chaque fois que la fenêtre est
  Corpus cumulé : entraîner plusieurs livres l'un après l'autre sur la même BD (sans régénérer) 
  et observer si les clusters thématiques changent.
  
- 
+ Partition 0:
+        église -> 0.26
+        auditeur -> 0.28
+        hôte -> 0.28
+        escalier -> 0.28
+        inconnu -> 0.28
+        idée -> 0.28
+        autre -> 0.29
+        avantage -> 0.29
+        horizon -> 0.29
+        auteur -> 0.29
+Partition 1:
+        femmes -> 0.23
+        ouvriers -> 0.24
+        chefs -> 0.26
+        camarades -> 0.26
+        yeux -> 0.26
+        murs -> 0.27
+        mores -> 0.27
+        poings -> 0.28
+        côtes -> 0.28
+        premiers -> 0.28
+Partition 2:
+        couleur -> 0.23
+        joie -> 0.25
+        fatigue -> 0.25
+        nouveau -> 0.25
+        toile -> 0.25
+        laine -> 0.26
+        sorte -> 0.26
+        colère -> 0.26
+        misère -> 0.26
+        montsou -> 0.27
+Partition 3:
+        toto -> 0.05
+        libertas -> 0.05
+        venditur -> 0.05
+        pede -> 0.05
+        pauperum -> 0.05
+        tabernas -> 0.05
+        dico -> 0.05
+        vobis -> 0.05
+        diligite -> 0.05
+        felix -> 0.05
+Partition 4:
+        ventre -> 0.33
+        duc -> 0.34
+        vieux -> 0.35
+        page -> 0.35
+        vent -> 0.35
+        médecin -> 0.35
+        mousquetaire -> 0.35
+        feu -> 0.35
+        toit -> 0.35
+        premier -> 0.35
 
+Conclusion: Il n'y a aucune relation entre ces mots.
  
  Stats BD post-entrainement : ajouter une méthode dans dao.py pour afficher nb mots 
  dans lexique, nb cooccurrences, taille mémoire matrice — utile pour calibrer --conserver
@@ -112,35 +167,872 @@ Conclusion: least-squares et city-block semble plus raproché de la réalité.
  
  Comparer les fenêtres : même mot avec t=3, t=5, t=10 — observer si la fenêtre large capture plus de 
  contexte sémantique ou plus de bruit.
+
+t=3: 
+ bras 15 0
+
+plus --> 19822.0
+quichotte --> 15194.0
+sancho --> 14023.0
+est --> 13444.0
+maître --> 10761.0
+chevalier --> 9966.0
+curé --> 9365.0
+don --> 8633.0
+dit --> 8616.0
+faire --> 8348.0
+temps --> 8012.0
+yeux --> 7951.0
+monde --> 7156.0
+gens --> 6706.0
+tant --> 6668.0
+ 
+ bras 15 1
+
+courage --> 2672.0
+pieds --> 2724.0
+épaules --> 2894.0
+chercher --> 2904.0
+lettres --> 2950.0
+femmes --> 3076.0
+suivre --> 3084.0
+lois --> 3092.0
+mores --> 3192.0
+pain --> 3198.0
+plaisir --> 3204.0
+mal --> 3208.0
+aventures --> 3208.0
+bois --> 3228.0
+larmes --> 3270.0
+ 
+ bras 15 2
+
+service --> 308.0
+voyage --> 308.0
+épaules --> 310.0
+récit --> 312.0
+lois --> 314.0
+désir --> 316.0
+courage --> 316.0
+pain --> 316.0
+vent --> 318.0
+malheur --> 318.0
+gouvernement --> 318.0
+goût --> 320.0
+dents --> 320.0
+compagnons --> 320.0
+bissac --> 320.0
  
  
  
+ t=5:
+ bras 15 0
+
+plus --> 60556.0
+est --> 60268.0
+don --> 57766.0
+quichotte --> 51239.0
+sancho --> 43084.0
+faire --> 29868.0
+dit --> 28626.0
+était --> 28241.0
+maître --> 27992.0
+chevalier --> 26898.0
+avait --> 22618.0
+deux --> 20352.0
+point --> 19569.0
+temps --> 18647.0
+tant --> 18472.0
+ 
+ 
+ bras 15 1
+
+pieds --> 5290.0
+courage --> 5396.0
+larmes --> 5672.0
+mains --> 5950.0
+amis --> 6082.0
+prendre --> 6100.0
+rossinante --> 6112.0
+passer --> 6344.0
+luscinde --> 6402.0
+plaisir --> 6460.0
+laisser --> 6482.0
+chercher --> 6506.0
+grands --> 6554.0
+mal --> 6556.0
+fils --> 6572.0
+ 
+ 
+ bras 15 2
+
+malheur --> 652.0
+goût --> 654.0
+gloire --> 654.0
+récit --> 656.0
+dents --> 658.0
+malheurs --> 658.0
+lois --> 660.0
+bois --> 660.0
+compagnons --> 660.0
+services --> 660.0
+courtoisie --> 662.0
+santé --> 662.0
+remettre --> 662.0
+malice --> 662.0
+sujet --> 664.0
+ 
+ 
+ t=10:
+ 
+ bras 15 0
+
+est --> 403327.0
+don --> 322132.0
+plus --> 279237.0
+quichotte --> 258103.0
+sancho --> 251531.0
+était --> 179320.0
+dit --> 177368.0
+avait --> 144725.0
+faire --> 129182.0
+chevalier --> 126200.0
+ai --> 109583.0
+maître --> 105266.0
+être --> 102429.0
+seigneur --> 100173.0
+deux --> 97742.0
+
+
+bras 15 1
+
+contre --> 9194.0
+prit --> 9562.0
+mains --> 9890.0
+force --> 9898.0
+ayant --> 10090.0
+prendre --> 10150.0
+corps --> 10150.0
+sous --> 10270.0
+pieds --> 10596.0
+fin --> 10700.0
+rossinante --> 10918.0
+aussitôt --> 11350.0
+devant --> 11382.0
+quelques --> 11452.0
+grands --> 11602.0
+ 
+ 
+ bras 15 2
+
+force --> 1488.0
+bouche --> 1530.0
+pieds --> 1542.0
+compagnie --> 1546.0
+lit --> 1554.0
+sujet --> 1558.0
+tirer --> 1560.0
+cause --> 1562.0
+tenir --> 1562.0
+vertu --> 1566.0
+visage --> 1568.0
+courage --> 1568.0
+mains --> 1568.0
+barbe --> 1568.0
+servir --> 1570.0
+ 
+Conclusion: Plus la taille de la fenêtre est grande et plus il semble y avoir de mots correspondant, mais il y a quand-même beaucoup de bruit.
  
  Tester mots fréquents vs rares : un mot très fréquent (homme) vs un mot rare — la qualité des 
  voisins change-t-elle ?
- 
+ XXX
  
  
  Ajouter la similarité cosinus dans recherche.py comme méthode 3 (normaliser les vecteurs puis produit scalaire)
  
- 
+ XXX
  
  
 Clustering (-c)
  Variations de k : lancer k=3, 5, 8, 10 et comparer la cohérence thématique des partitions 
  (configs prêtes dans launch.json).
  
+ k=3:
+ Arrêt après 20 itération
+Partitionnement en 75.67 secondes.
+Partition 0:
+        porte -> 0.24
+        fosse -> 0.24
+        main -> 0.25
+        tête -> 0.25
+        nuit -> 0.25
+        mer -> 0.25
+        reine -> 0.25
+        compagnie -> 0.25
+        fenêtre -> 0.26
+        conversation -> 0.26
+Partition 1:
+        toto -> 0.06
+        libertas -> 0.06
+        venditur -> 0.06
+        pede -> 0.06
+        pauperum -> 0.06
+        tabernas -> 0.06
+        dico -> 0.06
+        vobis -> 0.06
+        diligite -> 0.06
+        felix -> 0.06
+Partition 2:
+        nouveau -> 0.26
+        montsou -> 0.28
+        fer -> 0.28
+        la -> 0.29
+        grands -> 0.30
+        bois -> 0.30
+        couleur -> 0.30
+        mépris -> 0.30
+        bronze -> 0.30
+        descendre -> 0.31
  
+ k=5:
+ Arrêt après 15 itération
+Partitionnement en 83.25 secondes.
+Partition 0:
+        toto -> 0.05
+        libertas -> 0.05
+        venditur -> 0.05
+        pede -> 0.05
+        pauperum -> 0.05
+        tabernas -> 0.05
+        dico -> 0.05
+        vobis -> 0.05
+        diligite -> 0.05
+        felix -> 0.05
+Partition 1:
+        pain -> 0.36
+        criblage -> 0.39
+        canal -> 0.43
+        nord -> 0.44
+        placement -> 0.45
+        royaume -> 0.45
+        jardin -> 0.45
+        14 -> 0.46
+        fleuve -> 0.47
+        livarot -> 0.47
+Partition 2:
+        sage -> 0.44
+        vieux -> 0.45
+        surtout -> 0.45
+        berger -> 0.47
+        barbier -> 0.47
+        vide -> 0.48
+        désordre -> 0.48
+        lentement -> 0.48
+        calme -> 0.48
+        duc -> 0.48
+Partition 3:
+        couleur -> 0.25
+        nouveau -> 0.26
+        montsou -> 0.27
+        fatigue -> 0.28
+        joie -> 0.28
+        toile -> 0.28
+        sortir -> 0.29
+        laine -> 0.29
+        fer -> 0.29
+        misère -> 0.29
+Partition 4:
+        trouva -> 0.34
+        disait -> 0.34
+        faisait -> 0.36
+        restait -> 0.36
+        avait -> 0.36
+        allait -> 0.36
+        qu -> 0.37
+        fallait -> 0.37
+        pourtant -> 0.37
+        portait -> 0.37
+ 
+ k=8:
+ Arrêt après 34 itération
+Partitionnement en 265.86 secondes.
+Partition 0:
+        duc -> 0.28
+        ventre -> 0.28
+        renégat -> 0.30
+        roi -> 0.30
+        commissaire -> 0.30
+        barbier -> 0.30
+        premier -> 0.30
+        lendemain -> 0.30
+        toit -> 0.30
+        dos -> 0.31
+Partition 1:
+        toto -> 0.04
+        libertas -> 0.04
+        venditur -> 0.04
+        pede -> 0.04
+        pauperum -> 0.04
+        tabernas -> 0.04
+        dico -> 0.04
+        vobis -> 0.04
+        diligite -> 0.04
+        felix -> 0.04
+Partition 2:
+        nouveau -> 0.22
+        fer -> 0.25
+        montsou -> 0.25
+        soie -> 0.26
+        couleur -> 0.26
+        bronze -> 0.26
+        deuil -> 0.26
+        la -> 0.27
+        fonte -> 0.27
+        auprès -> 0.27
+Partition 3:
+        femmes -> 0.22
+        ouvriers -> 0.23
+        chefs -> 0.25
+        camarades -> 0.25
+        yeux -> 0.25
+        murs -> 0.25
+        mores -> 0.27
+        roues -> 0.27
+        côtes -> 0.27
+        premiers -> 0.27
+Partition 4:
+        porte -> 0.19
+        mer -> 0.19
+        reine -> 0.20
+        compagnie -> 0.20
+        nuit -> 0.20
+        tête -> 0.20
+        fosse -> 0.20
+        conversation -> 0.21
+        voiture -> 0.21
+        veille -> 0.21
+Partition 5:
+        commençait -> 0.32
+        quant -> 0.32
+        propos -> 0.32
+        merveille -> 0.33
+        peine -> 0.34
+        craindre -> 0.34
+        présent -> 0.34
+        manger -> 0.35
+        égard -> 0.35
+        londres -> 0.36
+Partition 6:
+        effet -> 0.27
+        attendant -> 0.29
+        arrière -> 0.30
+        souriant -> 0.30
+        passant -> 0.31
+        riant -> 0.32
+        entendant -> 0.32
+        tiernos -> 0.32
+        años -> 0.32
+        queda -> 0.32
+Partition 7:
+        trouva -> 0.33
+        disait -> 0.34
+        faisait -> 0.35
+        avait -> 0.36
+        pourtant -> 0.36
+        restait -> 0.36
+        allait -> 0.36
+        qu -> 0.36
+        portait -> 0.37
+        lorsqu -> 0.37
+ 
+ 
+ k=10:
+ Arrêt après 20 itération
+Partitionnement en 188.04 secondes.
+Partition 0:
+        arrêta -> 0.27
+        éloigna -> 0.28
+        élança -> 0.28
+        approcha -> 0.28
+        écria -> 0.29
+        arrêtait -> 0.29
+        inimicos -> 0.29
+        fairbanks -> 0.29
+        élargissait -> 0.30
+        éloigner -> 0.31
+Partition 1:
+        attendait -> 0.40
+        toujours -> 0.42
+        où -> 0.42
+        enfin -> 0.44
+        faisait -> 0.44
+        mais -> 0.44
+        alors -> 0.45
+        ensuite -> 0.45
+        avait -> 0.45
+        pourtant -> 0.46
+Partition 2:
+        avez -> 0.23
+        savez -> 0.23
+        êtes -> 0.23
+        pouvez -> 0.23
+        aurez -> 0.24
+        voyez -> 0.24
+        étiez -> 0.24
+        allez -> 0.25
+        serez -> 0.25
+        seriez -> 0.25
+Partition 3:
+        porte -> 0.18
+        fosse -> 0.19
+        mer -> 0.19
+        compagnie -> 0.19
+        reine -> 0.20
+        tête -> 0.20
+        charcuterie -> 0.20
+        main -> 0.20
+        conversation -> 0.20
+        nuit -> 0.20
+Partition 4:
+        géants -> 0.28
+        mines -> 0.28
+        rires -> 0.29
+        samies -> 0.30
+        laïs -> 0.30
+        incompréhensible -> 0.30
+        souterrains -> 0.30
+        pièges -> 0.30
+        recouvre -> 0.30
+        dénouées -> 0.30
+Partition 5:
+        nouveau -> 0.20
+        montsou -> 0.23
+        fer -> 0.23
+        soie -> 0.24
+        couleur -> 0.24
+        bronze -> 0.24
+        fourberies -> 0.25
+        leonardo -> 0.25
+        rostro -> 0.25
+        amondongado -> 0.25
+Partition 6:
+        ventre -> 0.28
+        duc -> 0.28
+        premier -> 0.30
+        lendemain -> 0.30
+        commissaire -> 0.30
+        renégat -> 0.30
+        roi -> 0.30
+        barbier -> 0.30
+        toit -> 0.30
+        dos -> 0.31
+Partition 7:
+        chefs -> 0.24
+        ouvriers -> 0.25
+        câbles -> 0.26
+        épaules -> 0.26
+        parmi -> 0.26
+        dianes -> 0.26
+        femmes -> 0.26
+        yeux -> 0.26
+        tous -> 0.26
+        côtes -> 0.26
+Partition 8:
+        tantum -> 0.34
+        pellis -> 0.34
+        suadente -> 0.34
+        juvénal -> 0.34
+        _auberginois_ -> 0.34
+        _alguazil_ -> 0.34
+        _zaquizami_ -> 0.34
+        décomposition -> 0.39
+        contemplative -> 0.40
+        noble -> 0.40
+Partition 9:
+        toto -> 0.03
+        libertas -> 0.03
+        venditur -> 0.03
+        pede -> 0.03
+        pauperum -> 0.03
+        tabernas -> 0.03
+        dico -> 0.03
+        vobis -> 0.03
+        diligite -> 0.03
+        felix -> 0.03
+ --------------------------------------------------Conclusion:
+ Cluster Latin/étranger — le plus stable
+Présent dans tous les k, avec les distances les plus basses (0.06 → 0.03) :
+
+
+toto, libertas, venditur, pede, pauperum, tabernas, dico, vobis, diligite, felix
+Ce sont des citations latines dans Don Quichotte (épigraphes, références). Ils forment un cluster parfait parce qu'ils ne cooccurrent qu'entre eux — jamais avec le vocabulaire français. Plus k augmente, plus ils s'isolent (distance diminue).
+
+À k=8 on voit aussi apparaître un cluster espagnol : tiernos, años, queda — même phénomène.
+
+Cluster Germinal — stable
+Présent à tous les k :
+
+
+montsou, fer, couleur, bronze, soie, fonte, deuil
+Montsou est la ville fictive de Germinal (Zola). Ces mots cooccurrent ensemble dans les descriptions de la mine et du travail ouvrier. Cluster thématique clair.
+
+Découverte à k=10 — clusters grammaticaux
+À partir de k=10 le modèle découvre des patterns grammaticaux, pas juste thématiques :
+
+Partition 2 — verbes conjugués à la 2e personne du pluriel :
+
+
+avez, savez, êtes, pouvez, aurez, voyez, allez, serez
+Partition 0 — verbes de mouvement au passé :
+
+
+arrêta, éloigna, élança, approcha, écria, arrêtait
+Le modèle a trouvé des classes grammaticales sans qu'on lui ait dit quoi que ce soit sur la grammaire.
+
+Résumé comparatif
+k	Itérations	Temps	Observation
+3	20	76s	Trop grossier, thèmes mélangés
+5	15	83s	Bon équilibre, groupes lisibles
+8	34	266s	Plus granulaire, clusters linguistiques émergent
+10	20	188s	Très fin, certains clusters deviennent des mots rares isolés
+k=5 converge le plus vite. k=8 prend 3x plus de temps car il oscillait plus longtemps avant de se stabiliser (34 itérations vs 15-20).
+
+k=5 ou k=8 sont les plus intéressants pour l'analyse sémantique sur ce corpus.
+ -----------------------------------------------------------------------------------------------------
  
  Impact de la normalisation : comparer Cluster [sans norm] vs Cluster [norm] sur les mêmes 
  données — observer si les clusters sont plus équilibrés.
+ Normalisation:
+ Arrêt après 47 itération
+Partitionnement en 347.98 secondes.
+Partition 0:
+        porte -> 0.21
+        fosse -> 0.22
+        mer -> 0.22
+        tête -> 0.22
+        reine -> 0.22
+        main -> 0.22
+        nuit -> 0.22
+        compagnie -> 0.22
+        fenêtre -> 0.23
+        conversation -> 0.23
+Partition 1:
+        ventre -> 0.32
+        duc -> 0.33
+        vieux -> 0.35
+        vent -> 0.35
+        premier -> 0.35
+        page -> 0.35
+        roi -> 0.35
+        renégat -> 0.35
+        médecin -> 0.35
+        feu -> 0.35
+Partition 2:
+        femmes -> 0.24
+        ouvriers -> 0.24
+        chefs -> 0.26
+        camarades -> 0.26
+        yeux -> 0.27
+        murs -> 0.28
+        mores -> 0.28
+        poings -> 0.28
+        côtes -> 0.28
+        épaules -> 0.28
+Partition 3:
+        nouveau -> 0.24
+        montsou -> 0.25
+        la -> 0.27
+        couleur -> 0.27
+        fer -> 0.27
+        soie -> 0.27
+        bronze -> 0.28
+        deuil -> 0.28
+        tant -> 0.28
+        parler -> 0.28
+Partition 4:
+        toto -> 0.05
+        libertas -> 0.05
+        venditur -> 0.05
+        pede -> 0.05
+        pauperum -> 0.05
+        tabernas -> 0.05
+        dico -> 0.05
+        vobis -> 0.05
+        diligite -> 0.05
+        felix -> 0.05
  
  
  
+ 
+ Sans normalisation: 
+ Arrêt après 31 itération
+Partitionnement en 235.69 secondes.
+Partition 0:
+        et -> 6521882.78
+        à -> 8283540.35
+        le -> 9165197.78
+        l -> 10574579.06
+        il -> 25838461.06
+        la -> 33770776.63
+        de -> 59227892.92
+Partition 1:
+        mais -> 302419.49
+        même -> 311430.68
+        comme -> 397461.58
+        tout -> 413147.45
+        avec -> 444105.81
+        si -> 455120.91
+        par -> 491419.55
+        bien -> 530421.97
+        plus -> 548949.55
+        me -> 630622.49
+Partition 2:
+        lui -> 1054780.30
+        se -> 1784845.00
+        en -> 1858124.90
+        des -> 2036301.80
+        était -> 2273148.00
+        s -> 2403559.70
+        qui -> 2565177.00
+        vous -> 3573335.20
+        ce -> 3595979.30
+        une -> 4485519.70
+Partition 3:
+        _philis_ -> 7.63
+        dégrossir -> 7.63
+        scrofule -> 7.63
+        coque -> 7.89
+        valois -> 7.95
+        pressentir -> 7.99
+        continuité -> 8.25
+        révocation -> 8.28
+        encombrement -> 8.28
+        avènement -> 8.28
+Partition 4:
+        prendre -> 10793.32
+        florent -> 11657.95
+        mal -> 11853.20
+        cependant -> 14187.46
+        toujours -> 14294.47
+        enfin -> 14693.26
+        seulement -> 15528.90
+        avant -> 15672.85
+        fort -> 16080.37
+        parler -> 16270.15
+ 
+ Conclusion: Sur la normalisation les clusters sont plus équilibrés, tandis que sur l'autre il est plus répartie.
  
  Impact de --conserver : comparer cons=1k, 5k, 10k et sans conservation — trade-off vitesse / qualité.
+ 1K:
+ Arrêt après 27 itération
+Partitionnement en 66.52 secondes.
+Partition 0:
+        fonte -> 0.21
+        nouveaux -> 0.21
+        nouveau -> 0.22
+        grands -> 0.22
+        coups -> 0.22
+        montsou -> 0.22
+        soie -> 0.22
+        faïence -> 0.23
+        fer -> 0.23
+        couleur -> 0.23
+Partition 1:
+        porte -> 0.18
+        fosse -> 0.19
+        tête -> 0.19
+        mer -> 0.19
+        reine -> 0.19
+        nuit -> 0.19
+        compagnie -> 0.20
+        main -> 0.20
+        peau -> 0.20
+        veine -> 0.20
+Partition 2:
+        église -> 0.24
+        auditeur -> 0.25
+        escalier -> 0.25
+        hôte -> 0.25
+        inconnu -> 0.25
+        idée -> 0.26
+        avantage -> 0.26
+        horizon -> 0.26
+        autre -> 0.26
+        auteur -> 0.27
+Partition 3:
+        ventre -> 0.29
+        vieux -> 0.29
+        vent -> 0.30
+        duc -> 0.30
+        renégat -> 0.30
+        page -> 0.31
+        premier -> 0.31
+        toit -> 0.31
+        roi -> 0.31
+        mousquetaire -> 0.31
+Partition 4:
+        translator -> 0.06
+        april -> 0.06
+        character -> 0.06
+        encoding -> 0.06
+        utf -> 0.06
+        proofreading -> 0.06
+        team -> 0.06
+        generously -> 0.06
+        toto -> 0.06
+        libertas -> 0.06
  
  
+ 5K:
+ Arrêt après 16 itération
+Partitionnement en 79.25 secondes.
+Partition 0:
+        couleur -> 0.23
+        nouveau -> 0.24
+        joie -> 0.24
+        toile -> 0.25
+        laine -> 0.25
+        fatigue -> 0.25
+        montsou -> 0.26
+        colère -> 0.26
+        sorte -> 0.26
+        sortir -> 0.26
+Partition 1:
+        contrôleurs -> 0.39
+        rugueux -> 0.39
+        tardives -> 0.39
+        résumés -> 0.39
+        rébellions -> 0.39
+        galonnés -> 0.39
+        perlées -> 0.39
+        _droguerie -> 0.39
+        pharmacie_ -> 0.39
+        cloisonnés -> 0.39
+Partition 2:
+        ventre -> 0.31
+        duc -> 0.32
+        page -> 0.33
+        toit -> 0.33
+        premier -> 0.33
+        vent -> 0.34
+        vieux -> 0.34
+        nez -> 0.34
+        renégat -> 0.34
+        roi -> 0.34
+Partition 3:
+        ouvriers -> 0.23
+        femmes -> 0.23
+        chefs -> 0.23
+        yeux -> 0.25
+        camarades -> 0.25
+        poings -> 0.26
+        côtes -> 0.26
+        épaules -> 0.26
+        parmi -> 0.26
+        câbles -> 0.26
+Partition 4:
+        toto -> 0.05
+        libertas -> 0.05
+        venditur -> 0.05
+        pulsat -> 0.05
+        pede -> 0.05
+        pauperum -> 0.05
+        tabernas -> 0.05
+        dico -> 0.05
+        vobis -> 0.05
+        diligite -> 0.05
+ 
+ 
+ 10K:
+ Arrêt après 24 itération
+Partitionnement en 181.51 secondes.
+Partition 0:
+        bras -> 0.48
+        derrière -> 0.49
+        laquais -> 0.50
+        surtout -> 0.50
+        par -> 0.51
+        maheu -> 0.51
+        sous -> 0.51
+        malheureux -> 0.51
+        sur -> 0.51
+        bourgeois -> 0.52
+Partition 1:
+        trouva -> 0.34
+        faisait -> 0.35
+        disait -> 0.35
+        restait -> 0.36
+        allait -> 0.36
+        pourtant -> 0.36
+        avait -> 0.36
+        vit -> 0.37
+        quand -> 0.37
+        portait -> 0.37
+Partition 2:
+        toto -> 0.04
+        libertas -> 0.04
+        venditur -> 0.04
+        pede -> 0.04
+        pauperum -> 0.04
+        tabernas -> 0.04
+        dico -> 0.04
+        vobis -> 0.04
+        diligite -> 0.04
+        felix -> 0.04
+Partition 3:
+        mines -> 0.28
+        géants -> 0.30
+        porteurs -> 0.30
+        rires -> 0.30
+        toitures -> 0.32
+        halles -> 0.32
+        douceurs -> 0.32
+        eaux -> 0.32
+        notes -> 0.32
+        fromages -> 0.33
+Partition 4:
+        couleur -> 0.25
+        nouveau -> 0.25
+        joie -> 0.26
+        montsou -> 0.27
+        fatigue -> 0.27
+        toile -> 0.27
+        sortir -> 0.27
+        fer -> 0.28
+        colère -> 0.28
+        misère -> 0.28
+ ----------------------------------------------------Conclusion
+ Vitesse
+Conservation	Itérations	Temps
+1 000	27	66s
+5 000	16	79s
+10 000	24	181s
+Le temps ne croît pas linéairement — doubler les colonnes multiplie le temps de calcul bien plus que x2, car chaque distance se calcule sur un vecteur plus long.
+
+Problème visible à cons=1k — pollution Gutenberg
+Partition 4 :
+
+
+translator, april, character, encoding, utf, proofreading, team, generously
+Ces mots anglais viennent des en-têtes Project Gutenberg en début de fichier. Avec seulement 1 000 colonnes retenues, les mots les plus fréquents incluent ces métadonnées répétées dans tous les fichiers. Ils cooccurrent ensemble dans le header → cluster artificiel. La solution serait de nettoyer les fichiers avant entrainement, ou d'utiliser une conservation plus grande.
+
+cons=5k — meilleur équilibre
+Convergence la plus rapide (16 itérations). Les clusters thématiques sont les plus nets :
+
+Partition 3 : ouvriers, femmes, chefs, camarades, poings, épaules → univers Germinal très clair
+Partition 4 : Latin isolé
+Partition 1 : mots rares avec _droguerie, pharmacie_ (underscores = artefacts de formatage du texte source)
+cons=10k — malédiction de la dimensionnalité
+Les distances sont beaucoup plus élevées (0.48–0.52 en partition 0 vs 0.18–0.22 à cons=1k). Plus il y a de dimensions, plus les vecteurs deviennent "équidistants" entre eux — les distances perdent de leur sens. C'est pour ça que la normalisation aide : elle ramène tout sur la même échelle.
+
+Partition 0 à 10k mélange par, sous, sur (prépositions) avec maheu (personnage de Germinal) et laquais — incohérent.
+
+Conclusion
+cons=5k est le meilleur compromis pour ce corpus. cons=1k est rapide mais capture du bruit de métadonnées. cons=10k est lent et les distances deviennent moins discriminantes.
+
+La prochaine expérience logique serait de nettoyer les fichiers des en-têtes Gutenberg avant d'entrainer pour éliminer la pollution visible à cons=1k.
+ 
+ ----------------------------------------------------------------------------------------------------------
  
  Fenêtre et clustering : lancer t=3 vs t=10 avec k=5 — fenêtre large = clusters plus thématiques ?
  
@@ -148,6 +1040,216 @@ Clustering (-c)
  
  
  Graphe de convergence : lancer les configs + Graph pour k=3, 5, 10 et comparer le nombre d'itérations jusqu'à stabilisation.
+ k=3:
+ Arrêt après 30 itération
+Partitionnement en 187.15 secondes.
+Partition 0:
+        de -> 0.40
+        pour -> 0.41
+        par -> 0.41
+        dans -> 0.42
+        sur -> 0.42
+        devant -> 0.43
+        prit -> 0.43
+        enfin -> 0.43
+        sous -> 0.43
+        mais -> 0.43
+Partition 1:
+        toto -> 0.05
+        libertas -> 0.05
+        venditur -> 0.05
+        pede -> 0.05
+        pauperum -> 0.05
+        tabernas -> 0.05
+        dico -> 0.05
+        vobis -> 0.05
+        diligite -> 0.05
+        felix -> 0.05
+Partition 2:
+        nouveau -> 0.26
+        couleur -> 0.26
+        montsou -> 0.27
+        fer -> 0.28
+        fatigue -> 0.29
+        soie -> 0.29
+        la -> 0.29
+        toile -> 0.29
+        mépris -> 0.29
+        sortir -> 0.29
+ 
+ k=5:
+ Arrêt après 19 itération
+Partitionnement en 145.30 secondes.
+Partition 0:
+        église -> 0.27
+        auditeur -> 0.28
+        escalier -> 0.28
+        inconnu -> 0.28
+        hôte -> 0.28
+        idée -> 0.29
+        autre -> 0.29
+        avantage -> 0.29
+        hôtelier -> 0.29
+        auteur -> 0.30
+Partition 1:
+        toto -> 0.04
+        libertas -> 0.04
+        venditur -> 0.04
+        pede -> 0.04
+        pauperum -> 0.04
+        tabernas -> 0.04
+        dico -> 0.04
+        vobis -> 0.04
+        diligite -> 0.04
+        felix -> 0.04
+Partition 2:
+        nouveau -> 0.23
+        couleur -> 0.24
+        fer -> 0.25
+        montsou -> 0.25
+        soie -> 0.26
+        fatigue -> 0.26
+        toile -> 0.26
+        laine -> 0.27
+        la -> 0.27
+        bronze -> 0.27
+Partition 3:
+        de -> 0.40
+        moindre -> 0.41
+        dans -> 0.41
+        par -> 0.41
+        pour -> 0.42
+        sur -> 0.42
+        prit -> 0.42
+        devant -> 0.42
+        sous -> 0.42
+        enfin -> 0.43
+Partition 4:
+        femmes -> 0.24
+        ouvriers -> 0.24
+        chefs -> 0.26
+        camarades -> 0.26
+        yeux -> 0.26
+        murs -> 0.27
+        mores -> 0.27
+        poings -> 0.28
+        côtes -> 0.28
+        premiers -> 0.28
+ 
+ k=10:
+ Arrêt après 28 itération
+Partitionnement en 394.42 secondes.
+Partition 0:
+        nouveau -> 0.21
+        soie -> 0.23
+        fer -> 0.23
+        bronze -> 0.23
+        montsou -> 0.24
+        couleur -> 0.24
+        deuil -> 0.24
+        fourberies -> 0.25
+        leonardo -> 0.25
+        rostro -> 0.25
+Partition 1:
+        église -> 0.24
+        hôte -> 0.25
+        escalier -> 0.25
+        idée -> 0.25
+        inconnu -> 0.25
+        auteur -> 0.25
+        eau -> 0.26
+        auditeur -> 0.26
+        ordre -> 0.26
+        autre -> 0.26
+Partition 2:
+        chefs -> 0.24
+        ouvriers -> 0.24
+        dianes -> 0.25
+        câbles -> 0.25
+        épaules -> 0.26
+        parmi -> 0.26
+        femmes -> 0.26
+        yeux -> 0.26
+        tous -> 0.26
+        côtes -> 0.26
+Partition 3:
+        toto -> 0.04
+        libertas -> 0.04
+        venditur -> 0.04
+        pede -> 0.04
+        pauperum -> 0.04
+        tabernas -> 0.04
+        dico -> 0.04
+        vobis -> 0.04
+        diligite -> 0.04
+        felix -> 0.04
+Partition 4:
+        trouva -> 0.32
+        disait -> 0.32
+        allait -> 0.35
+        faisait -> 0.35
+        fallait -> 0.35
+        qu -> 0.35
+        restait -> 0.35
+        pourtant -> 0.36
+        avait -> 0.36
+        croyait -> 0.36
+Partition 5:
+        duc -> 0.27
+        ventre -> 0.28
+        roi -> 0.29
+        commissaire -> 0.29
+        barbier -> 0.29
+        renégat -> 0.29
+        premier -> 0.30
+        toit -> 0.30
+        lendemain -> 0.30
+        vieux -> 0.30
+Partition 6:
+        commençait -> 0.31
+        quant -> 0.31
+        merveille -> 0.31
+        propos -> 0.32
+        craindre -> 0.33
+        présent -> 0.33
+        peine -> 0.33
+        manger -> 0.35
+        londres -> 0.35
+        droite -> 0.35
+Partition 7:
+        géants -> 0.28
+        mines -> 0.28
+        rires -> 0.29
+        samies -> 0.30
+        laïs -> 0.30
+        incompréhensible -> 0.30
+        souterrains -> 0.30
+        pièges -> 0.30
+        recouvre -> 0.30
+        dénouées -> 0.30
+Partition 8:
+        porte -> 0.19
+        mer -> 0.19
+        reine -> 0.19
+        compagnie -> 0.19
+        tête -> 0.20
+        nuit -> 0.20
+        fosse -> 0.20
+        conversation -> 0.20
+        voiture -> 0.20
+        main -> 0.21
+Partition 9:
+        enfermée -> 0.44
+        brasseries -> 0.46
+        entra -> 0.47
+        perdues -> 0.47
+        entrer -> 0.48
+        _non_ -> 0.48
+        fossé -> 0.48
+        vallon -> 0.49
+        envelopper -> 0.49
+        nageant -> 0.50
+ 
  
  
  
